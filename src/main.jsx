@@ -13,7 +13,7 @@ import Success from './Success.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/digital-detox-kit-backend">
+    <BrowserRouter basename="/digital-detox-initiative">
       <Routes>
         <Route path="/" element={<ProductPage />} />
         <Route path="/back-stretcher" element={<BackStretcher />} />
