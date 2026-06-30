@@ -89,7 +89,7 @@ function Popup({ onDismiss }) {
       style={{
         position: 'fixed', inset: 0, zIndex: 1000,
         background: 'rgba(30,27,22,0.45)',
-        display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.35s ease',
       }}
@@ -98,12 +98,12 @@ function Popup({ onDismiss }) {
         onClick={e => e.stopPropagation()}
         style={{
           background: '#fff',
-          borderRadius: '20px 20px 0 0',
+          borderRadius: 20,
           padding: '32px 28px 28px',
-          maxWidth: 440, width: '100%',
-          boxShadow: '0 -8px 40px rgba(30,27,22,0.18)',
+          maxWidth: 440, width: 'calc(100% - 40px)',
+          boxShadow: '0 16px 60px rgba(30,27,22,0.22)',
           border: `1px solid ${P.border}`,
-          transform: `translateY(${visible ? '0' : '100%'})`,
+          transform: `translateY(${visible ? '0' : '24px'}) scale(${visible ? 1 : 0.97})`,
           transition: 'transform 0.38s cubic-bezier(.32,.72,0,1)',
         }}
       >
