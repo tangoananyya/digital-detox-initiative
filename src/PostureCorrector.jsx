@@ -89,19 +89,10 @@ function Popup({ onDismiss }) {
   );
 }
 
-async function goToCheckout(productName, productPrice) {
-  try {
-    const res = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ productName, productPrice }),
-    });
-    const data = await res.json();
-    if (data.url) window.location.href = data.url;
-  } catch (err) {
-    console.error('Checkout error', err);
-    alert('Unable to process checkout. Please try again.');
-  }
+const PAYMENT_LINK = 'https://buy.stripe.com/5kQ6oHc009NV4dSdoGdfG08';
+
+function goToCheckout() {
+  window.location.href = PAYMENT_LINK;
 }
 
 const REVIEWS = [

@@ -175,20 +175,8 @@ function SignalGauge({ progress }) {
   );
 }
 
-async function goToCheckout(productName, productPrice, items) {
-  try {
-    const body = items ? { items } : { productName, productPrice };
-    const res = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-    const data = await res.json();
-    if (data.url) window.location.href = data.url;
-  } catch (err) {
-    console.error('Checkout error', err);
-    alert('Unable to process checkout. Please try again.');
-  }
+function goToCheckout(productName, productPrice, items) {
+  // no-op: quiz CTAs now navigate directly to product pages
 }
 
 export default function App() {
@@ -305,7 +293,7 @@ export default function App() {
             </div>
             <button
               className="ddi-btn-brass"
-              onClick={() => goToCheckout(null, null, Object.values(PRODUCTS).map(p => ({ name: p.name, price: p.price })))}
+              onClick={() => navigate('/products')}
               style={{ padding: '16px 40px', background: '#B07D3A', color: '#fff', border: 'none', borderRadius: 14, fontFamily: "'Inter',sans-serif", fontSize: 16, fontWeight: 600, cursor: 'pointer' }}
             >
               Get the Full Kit for $99.99
