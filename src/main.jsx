@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 import ProductPage from './ProductPage.jsx';
 import BackStretcher from './BackStretcher.jsx';
 import BallMassager from './BallMassager.jsx';
@@ -14,6 +20,7 @@ import Success from './Success.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<ProductPage />} />
         <Route path="/back-stretcher" element={<BackStretcher />} />
