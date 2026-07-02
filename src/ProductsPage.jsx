@@ -107,21 +107,23 @@ export default function ProductsPage() {
       <div className="pg-grid-wrap">
         <div className="pg-grid">
           {PRODUCTS.map(p => (
-            <div key={p.name} className="pg-card">
-              <div className="pg-card-img">
-                {p.image
-                  ? <img src={p.image} alt={p.name} />
-                  : <span className="pg-card-img-label">Product Image</span>}
-              </div>
-              <div className="pg-card-body">
-                <div className="pg-card-name">{p.name}</div>
-                <div className="pg-card-desc">{p.desc}</div>
-                <div className="pg-card-footer">
-                  <span className="pg-card-price">${p.price.toFixed(2)}</span>
-                  <Link to={p.href} className="pg-card-btn">View Product</Link>
+            <Link key={p.name} to={p.href} style={{ textDecoration: 'none', color: 'inherit', display: 'contents' }}>
+              <div className="pg-card" style={{ cursor: 'pointer' }}>
+                <div className="pg-card-img">
+                  {p.image
+                    ? <img src={p.image} alt={p.name} />
+                    : <span className="pg-card-img-label">Product Image</span>}
+                </div>
+                <div className="pg-card-body">
+                  <div className="pg-card-name">{p.name}</div>
+                  <div className="pg-card-desc">{p.desc}</div>
+                  <div className="pg-card-footer">
+                    <span className="pg-card-price">${p.price.toFixed(2)}</span>
+                    <span className="pg-card-btn">View Product</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
