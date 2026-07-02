@@ -175,8 +175,10 @@ function SignalGauge({ progress }) {
   );
 }
 
-function goToCheckout(productName, productPrice, items) {
-  // no-op: quiz CTAs now navigate directly to product pages
+const FULL_KIT_LINK = 'https://buy.stripe.com/7sYaEX5BCbW339OesKdfG0a';
+
+function goToCheckout() {
+  window.location.href = FULL_KIT_LINK;
 }
 
 export default function App() {
@@ -293,7 +295,7 @@ export default function App() {
             </div>
             <button
               className="ddi-btn-brass"
-              onClick={() => navigate('/products')}
+              onClick={() => goToCheckout()}
               style={{ padding: '16px 40px', background: '#B07D3A', color: '#fff', border: 'none', borderRadius: 14, fontFamily: "'Inter',sans-serif", fontSize: 16, fontWeight: 600, cursor: 'pointer' }}
             >
               Get the Full Kit for $99.99
