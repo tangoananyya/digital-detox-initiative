@@ -284,7 +284,7 @@ export default function CompressionGloves() {
 
   useEffect(() => {
     if (sessionStorage.getItem('ddi_popup_dismissed')) return;
-    const t = setTimeout(() => setShowPopup(true), 6000);
+    const t = setTimeout(() => { if (window.scrollY < 300) setShowPopup(true); }, 2500);
     return () => clearTimeout(t);
   }, []);
 
