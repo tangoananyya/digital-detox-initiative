@@ -496,7 +496,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     if (sessionStorage.getItem('ddi_popup_dismissed')) return;
-    const t = setTimeout(() => { if (window.scrollY < 300) setShowPopup(true); }, 2500);
+    const t = setTimeout(() => setShowPopup(true), 6000);
     return () => clearTimeout(t);
   }, []);
 
