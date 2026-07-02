@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
+const BASE = import.meta.env.BASE_URL;
 
 const BG_IMAGES = [
   'https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?w=1920&q=80',
@@ -57,49 +59,61 @@ const PRODUCTS = {
     name: 'Cervical Decompression Neck Relaxer',
     price: 29.99,
     profileName: 'Tech Neck',
+    route: '/',
+    image: `${BASE}images/hero.png`,
     diagnosis: 'Your screen habits are loading significant stress on your cervical spine. Forward head posture from sustained screen use is compressing the discs and nerve roots at the base of your skull.',
     symptoms: ['Base of skull compression', 'Forward head posture pattern', 'Cervical nerve root tension'],
     prescription: 'The Cervical Decompression Neck Relaxer uses passive traction to restore your natural C-curve and decompress affected segments in just 10 minutes daily.',
   },
   eyes: {
-    name: 'Roller Ball Massager',
+    name: 'Acupressure Roller Ball Massager',
     price: 24.99,
     profileName: 'Screen Strain',
+    route: '/roller',
+    image: `${BASE}images/ballm2.png`,
     diagnosis: 'Your screen exposure is triggering chronic eye strain and tension headaches. Digital eye fatigue creates a referred pain pattern that radiates from your eyes to the base of your skull.',
     symptoms: ['Digital eye fatigue', 'Tension headache pattern', 'Temporalis muscle tightness'],
-    prescription: 'The Roller Ball Massager targets your temples, jawline, and orbital ridge to relieve the facial tension that builds from screen glare and sustained focus.',
+    prescription: 'The Acupressure Roller Ball Massager targets your temples, jawline, and orbital ridge to relieve the facial tension that builds from screen glare and sustained focus.',
   },
   shoulders: {
-    name: 'Back Stretcher Pillow',
+    name: 'Spine Release Back Stretcher',
     price: 34.99,
     profileName: 'Shoulder Load',
+    route: '/back-stretcher',
+    image: `${BASE}images/back5.png`,
     diagnosis: 'Your upper trapezius and rhomboid muscles have chronically shortened from sustained screen posture. This is a classic presentation of upper crossed syndrome from prolonged desk use.',
     symptoms: ['Upper trapezius hypertonicity', 'Rhomboid shortening', 'Thoracic kyphosis pattern'],
-    prescription: 'The Back Stretcher Pillow opens your thoracic spine and releases the fascia across your shoulders, restoring your natural range of motion.',
+    prescription: 'The Spine Release Back Stretcher opens your thoracic spine and releases the fascia across your shoulders, restoring your natural range of motion.',
   },
   wrists: {
-    name: 'Compression Gloves',
+    name: 'Copper Compression Therapy Gloves',
     price: 29.99,
     profileName: 'Wrist Tension',
+    route: '/gloves',
+    image: `${BASE}images/compressionglove1.png`,
     diagnosis: 'Repetitive micro-movements from typing and scrolling are creating cumulative strain in your wrist flexors and carpal tunnel. This pattern precedes most repetitive strain injuries.',
     symptoms: ['Wrist flexor overuse', 'Carpal tunnel compression', 'Grip fatigue pattern'],
-    prescription: 'Compression Gloves provide targeted compression to reduce inflammation and support your tendons throughout the workday.',
+    prescription: 'Copper Compression Therapy Gloves provide targeted compression to reduce inflammation and support your tendons throughout the workday.',
   },
   mental: {
-    name: 'Mini Handheld Massager',
+    name: 'Mini Handheld Percussion Massager',
     price: 29.99,
     profileName: 'Digital Burnout',
+    route: '/massager',
+    image: `${BASE}images/robomassage5.png`,
     diagnosis: 'Your nervous system is showing signs of chronic digital overstimulation. Screen-induced cortisol elevation is affecting your cognitive baseline and emotional regulation throughout the day.',
     symptoms: ['Nervous system dysregulation', 'Cortisol elevation pattern', 'Attentional fatigue'],
-    prescription: 'The Mini Handheld Massager activates the parasympathetic nervous system through targeted vibration therapy, shifting you from fight-or-flight to rest-and-digest.',
+    prescription: 'The Mini Handheld Percussion Massager activates the parasympathetic nervous system through targeted vibration therapy, shifting you from fight-or-flight to rest-and-digest.',
   },
   posture: {
-    name: 'Posture Corrector',
+    name: 'Posture Corrector Support Brace',
     price: 24.99,
     profileName: 'Postural Collapse',
+    route: '/posture',
+    image: `${BASE}images/posture2.png`,
     diagnosis: 'Extended laptop use is training your body into a forward-collapsed posture pattern. Your deep postural stabilizers have become inhibited from sustained static loading.',
     symptoms: ['Deep stabilizer inhibition', 'Thoracic flexion pattern', 'Anterior pelvic tilt'],
-    prescription: 'The Posture Corrector provides proprioceptive feedback to re-train your postural muscles and open your chest throughout the workday.',
+    prescription: 'The Posture Corrector Support Brace provides proprioceptive feedback to re-train your postural muscles and open your chest throughout the workday.',
   },
 };
 
@@ -244,23 +258,20 @@ export default function App() {
           </div>
 
           <div style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.1)', borderRadius: 22, overflow: 'hidden', marginBottom: 52 }}>
-            <div style={{ width: '100%', height: 280, background: '#EEF2EB', border: '2px dashed #C8D4C2', display: 'flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box' }}>
-              <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, letterSpacing: '0.1em', color: 'rgba(58,82,48,0.4)' }}>PRODUCT IMAGE</span>
+            <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#EEF2EB' }}>
+              <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ padding: '28px 28px 32px' }}>
               <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9C968A', marginBottom: 10 }}>Your prescribed solution</div>
-              <h2
-                style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 24, fontWeight: 700, margin: '0 0 10px', cursor: dominantKey === 'shoulders' ? 'pointer' : 'default' }}
-                onClick={() => dominantKey === 'shoulders' && navigate('/back-stretcher')}
-              >{product.name}</h2>
+              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 24, fontWeight: 700, margin: '0 0 10px' }}>{product.name}</h2>
               <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#1E1B16', marginBottom: 16 }}>${product.price.toFixed(2)}</div>
               <p style={{ fontSize: 15, lineHeight: 1.72, color: 'rgba(30,27,22,0.65)', margin: '0 0 26px' }}>{product.prescription}</p>
               <button
                 className="ddi-btn-brass"
-                onClick={() => dominantKey === 'shoulders' ? navigate('/back-stretcher') : goToCheckout(product.name, product.price)}
+                onClick={() => navigate(product.route)}
                 style={{ width: '100%', padding: '16px 18px', background: '#B07D3A', color: '#fff', border: 'none', borderRadius: 14, fontFamily: "'Inter',sans-serif", fontSize: 16, fontWeight: 600, cursor: 'pointer' }}
               >
-                {dominantKey === 'shoulders' ? 'View the Back Stretcher' : `Claim My Kit for $${product.price.toFixed(2)}`}
+                View the {product.name}
               </button>
             </div>
           </div>
@@ -269,22 +280,17 @@ export default function App() {
             <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9C968A', marginBottom: 22 }}>Also detected in your profile</div>
             <div className="ddi-other-grid">
               {otherProducts.map(p => (
-                <div key={p.name} style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 18, overflow: 'hidden' }}>
-                  <div style={{ height: 128, background: '#EEF2EB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.1em', color: 'rgba(58,82,48,0.38)' }}>IMAGE</span>
+                <Link key={p.name} to={p.route} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 18, overflow: 'hidden', transition: 'box-shadow 0.18s' }} className="ddi-other-card">
+                    <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#EEF2EB' }}>
+                      <img src={p.image} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    </div>
+                    <div style={{ padding: '14px 14px 16px' }}>
+                      <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 13.5, fontWeight: 600, marginBottom: 5, lineHeight: 1.3 }}>{p.name}</div>
+                      <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 13, color: '#B07D3A' }}>${p.price.toFixed(2)}</div>
+                    </div>
                   </div>
-                  <div style={{ padding: '16px 16px 18px' }}>
-                    <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, fontWeight: 600, marginBottom: 6, lineHeight: 1.3 }}>{p.name}</div>
-                    <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 13, color: '#B07D3A', marginBottom: 14 }}>${p.price.toFixed(2)}</div>
-                    <button
-                      className="ddi-btn-outline"
-                      onClick={() => goToCheckout(p.name, p.price)}
-                      style={{ width: '100%', padding: '10px 12px', background: 'transparent', color: '#1E1B16', border: '1px solid rgba(30,27,22,0.18)', borderRadius: 10, fontFamily: "'Inter',sans-serif", fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
-                    >
-                      Add to Kit
-                    </button>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -400,6 +406,8 @@ const GLOBAL_STYLES = `
   .ddi-btn-brass:hover { background: #9A6B2F !important; }
   .ddi-btn-outline { transition: background 0.16s, border-color 0.16s; }
   .ddi-btn-outline:hover { background: #F4F6F1 !important; border-color: #3A5230 !important; }
+  .ddi-other-card { transition: box-shadow 0.18s; }
+  .ddi-other-card:hover { box-shadow: 0 6px 24px rgba(30,27,22,0.1); }
 
   .ddi-other-grid {
     display: grid;
