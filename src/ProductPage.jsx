@@ -458,20 +458,8 @@ export default function ProductPage() {
 
   const removeFromCart = (id) => setCart(prev => prev.filter(i => i.id !== id));
 
-  const checkoutCart = async () => {
-    if (cart.length === 0) return;
-    try {
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: cart.map(i => ({ name: `${i.name} (${i.color})`, price: i.price, qty: i.qty })) }),
-      });
-      const data = await res.json();
-      if (data.url) window.location.href = data.url;
-    } catch (err) {
-      console.error('Checkout error', err);
-      alert('Unable to process checkout. Please try again.');
-    }
+  const checkoutCart = () => {
+    window.location.href = PAYMENT_LINK;
   };
 
   const ZOOM_FACTOR = 2.5;
@@ -659,6 +647,27 @@ export default function ProductPage() {
         .pp-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
         .pp-revealed { opacity: 1; transform: translateY(0); }
 
+        @media (max-width: 560px) {
+          .pp-nav { padding: 12px 16px; }
+          .pp-nav-link { display: none; }
+          .pp-nav-right { gap: 12px; }
+          .pp-brand-text { font-size: 9.5px; letter-spacing: 0.1em; }
+          .pp-section { padding: 40px 16px; }
+          .pp-cta-section { padding: 52px 20px; }
+          .pp-thumb-btn { width: 56px; }
+          .pp-sticky-bar { padding: 12px 16px; gap: 10px; }
+          .pp-sticky-name { font-size: 12px; }
+          .pp-sticky-meta { font-size: 9.5px; }
+          .pp-sticky-atc { padding: 10px 14px; font-size: 13px; }
+          .pp-spec:not(:nth-child(3n)) { border-right: none; padding-right: 0; }
+          .pp-spec:not(:nth-child(3n+1)) { padding-left: 0; }
+          .pp-spec:nth-child(odd) { border-right: 1px solid rgba(30,27,22,0.1); padding-right: 14px; }
+          .pp-spec:nth-child(even) { padding-left: 14px; }
+        }
+        @media (max-width: 400px) {
+          .pp-brand-text { display: none; }
+          .pp-price { font-size: 38px; }
+        }
         @media (prefers-reduced-motion: reduce) { .pp-atc, .pp-qty-btn, .pp-cta-btn, .pp-thumb-btn { transition: none; } .pp-badge::after, .pp-atc::after, .pp-hero-img, .pp-nav::after, .pp-bullet-dot, .pp-viewer-dot { animation: none; } .pp-price::after { width: 100%; animation: none; } .pp-reveal, .pp-revealed { opacity: 1; transform: none; transition: none; } }
       `}</style>
 
