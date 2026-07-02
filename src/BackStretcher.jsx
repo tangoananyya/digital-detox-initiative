@@ -255,13 +255,17 @@ export default function BackStretcher() {
   const [color, setColor] = useState('blush');
   const [heroImg, setHeroImg] = useState(COLOR_CONFIG.blush.hero);
   const [zoom, setZoom] = useState({ active: false, x: 0.5, y: 0.5, clientX: 0, clientY: 0, rect: null });
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('ddi_cart') || '[]'); } catch { return []; }
+  });
   const [cartOpen, setCartOpen] = useState(false);
   const [viewerCount, setViewerCount] = useState(43);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const heroRef = useRef(null);
 
   const totalCartItems = cart.reduce((sum, i) => sum + i.qty, 0);
+
+  useEffect(() => { localStorage.setItem('ddi_cart', JSON.stringify(cart)); }, [cart]);
 
   useEffect(() => {
     const t = setInterval(() => setViewerCount(Math.floor(Math.random() * 12) + 38), 8000);

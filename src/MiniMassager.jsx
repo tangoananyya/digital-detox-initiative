@@ -222,13 +222,17 @@ export default function MiniMassager() {
   const [color, setColor] = useState('sky');
   const [heroImg, setHeroImg] = useState(`${BASE}images/robomassage5.png`);
   const [zoom, setZoom] = useState({ active: false, x: 0.5, y: 0.5, clientX: 0, clientY: 0, rect: null });
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('ddi_cart') || '[]'); } catch { return []; }
+  });
   const [cartOpen, setCartOpen] = useState(false);
   const [viewerCount, setViewerCount] = useState(40);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const heroRef = useRef(null);
 
   const totalCartItems = cart.reduce((sum, i) => sum + i.qty, 0);
+
+  useEffect(() => { localStorage.setItem('ddi_cart', JSON.stringify(cart)); }, [cart]);
 
   useEffect(() => {
     const t = setInterval(() => setViewerCount(Math.floor(Math.random() * 15) + 33), 8000);
