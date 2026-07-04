@@ -80,7 +80,7 @@ const PRODUCTS = {
     price: 34.99,
     profileName: 'Shoulder Load',
     route: '/back-stretcher',
-    image: `${BASE}images/back5.png`,
+    image: `${BASE}images/back2.png`,
     diagnosis: 'Your upper trapezius and rhomboid muscles have chronically shortened from sustained screen posture. This is a classic presentation of upper crossed syndrome from prolonged desk use.',
     symptoms: ['Upper trapezius hypertonicity', 'Rhomboid shortening', 'Thoracic kyphosis pattern'],
     prescription: 'The Spine Release Back Stretcher opens your thoracic spine and releases the fascia across your shoulders, restoring your natural range of motion.',
