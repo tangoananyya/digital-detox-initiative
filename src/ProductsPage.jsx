@@ -83,6 +83,7 @@ export default function ProductsPage() {
           <span className="pg-brand-text">Digital Detox Initiative</span>
         </div>
         <div className="pg-nav-right">
+          <Link to="/home" className="pg-nav-link">Home</Link>
           <Link to="/products" className="pg-nav-link">All Products</Link>
           <Link to="/quiz" className="pg-nav-quiz">
             Find Your Fix

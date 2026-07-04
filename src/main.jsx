@@ -7,6 +7,7 @@ function ScrollToTop() {
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
 }
+import HomePage from './HomePage.jsx';
 import ProductPage from './ProductPage.jsx';
 import BackStretcher from './BackStretcher.jsx';
 import BallMassager from './BallMassager.jsx';
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/posture" element={<PostureCorrector />} />
         <Route path="/gloves" element={<CompressionGloves />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/quiz" element={<App />} />
         <Route path="/success" element={<Success />} />
       </Routes>

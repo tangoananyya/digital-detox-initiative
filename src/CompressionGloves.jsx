@@ -452,6 +452,7 @@ export default function CompressionGloves() {
           <span className="pp-brand-text">Digital Detox Initiative</span>
         </div>
         <div className="pp-nav-right">
+          <Link to="/home" className="pp-nav-link">Home</Link>
           <Link to="/products" className="pp-nav-link">All Products</Link>
           <Link to="/quiz" className="pp-nav-quiz">
             Find Your Fix
