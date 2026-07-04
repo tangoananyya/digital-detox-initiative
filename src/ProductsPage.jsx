@@ -44,7 +44,9 @@ export default function ProductsPage() {
         .pg-cart-icon { padding: 7px; color: ${P.charcoal}; display: flex; align-items: center; border-radius: 10px; transition: background 0.15s; text-decoration: none; }
         .pg-cart-icon:hover { background: ${P.sageBg}; }
 
-        .pg-hero { background: ${P.charcoal}; padding: 80px 24px 72px; text-align: center; }
+        .pg-hero { background: ${P.charcoal} url('${BASE}images/banner.webp') center/cover no-repeat; padding: 80px 24px 72px; text-align: center; position: relative; }
+        .pg-hero::before { content: ''; position: absolute; inset: 0; background: rgba(20,17,12,0.55); }
+        .pg-hero > * { position: relative; z-index: 1; }
         .pg-hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.38); margin-bottom: 18px; }
         .pg-hero-title { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 800; color: #F2EDE4; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.08; }
         @media (max-width: 600px) { .pg-hero-title { font-size: 34px; } }
