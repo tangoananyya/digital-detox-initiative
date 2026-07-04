@@ -295,6 +295,7 @@ const COLOR_CONFIG = {
   ivory: {
     hero: `${BASE}images/hero.png`,
     thumbs: [
+      `${BASE}images/hero.png`,
       `${BASE}images/ivory-1.png`,
       `${BASE}images/ivory-2.png`,
       `${BASE}images/ivory-3.png`,
