@@ -151,7 +151,7 @@ function SignalGauge({ progress }) {
         </defs>
         <path
           d="M 20 100 A 80 80 0 0 1 180 100"
-          stroke="rgba(156,150,138,0.22)"
+          stroke="rgba(255,245,230,0.12)"
           strokeWidth="8"
           fill="none"
           strokeLinecap="round"
@@ -168,8 +168,8 @@ function SignalGauge({ progress }) {
         />
       </svg>
       <div style={{ display: 'flex', justifyContent: 'space-between', width: 160, marginTop: -4 }}>
-        <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 9, letterSpacing: '0.1em', color: '#9C968A' }}>START</span>
-        <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 9, letterSpacing: '0.1em', color: '#9C968A' }}>DONE</span>
+        <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 9, letterSpacing: '0.1em', color: '#7A6E60' }}>START</span>
+        <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 9, letterSpacing: '0.1em', color: '#7A6E60' }}>DONE</span>
       </div>
     </div>
   );
@@ -217,45 +217,45 @@ export default function App() {
 
   if (isDone && product) {
     return (
-      <div style={{ minHeight: '100vh', background: '#FBF9F4', fontFamily: "'Inter',system-ui,sans-serif", color: '#1E1B16' }}>
+      <div style={{ minHeight: '100vh', background: '#1C1814', fontFamily: "'Inter',system-ui,sans-serif", color: '#F0E6D3' }}>
         <style>{GLOBAL_STYLES}</style>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '48px 24px 96px' }}>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 44 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B07D3A', display: 'inline-block' }} />
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.55)' }}>Digital Detox Initiative</span>
+            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(240,230,211,0.5)' }}>Digital Detox Initiative</span>
           </div>
 
-          <div style={{ display: 'inline-flex', alignItems: 'center', padding: '6px 14px', background: '#EEF2EB', border: '1px solid rgba(58,82,48,0.25)', borderRadius: 8, marginBottom: 18 }}>
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3A5230' }}>Tech Neck Stage {stage}</span>
+          <div style={{ display: 'inline-flex', alignItems: 'center', padding: '6px 14px', background: 'rgba(58,82,48,0.2)', border: '1px solid rgba(58,82,48,0.35)', borderRadius: 8, marginBottom: 18 }}>
+            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(240,230,211,0.75)' }}>Tech Neck Stage {stage}</span>
           </div>
 
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 40, fontWeight: 700, lineHeight: 1.1, margin: '0 0 18px', letterSpacing: '-0.01em' }}>
             {product.profileName}
           </h1>
 
-          <p style={{ fontSize: 16, lineHeight: 1.78, color: 'rgba(30,27,22,0.7)', margin: '0 0 32px', maxWidth: 560 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.78, color: 'rgba(240,230,211,0.65)', margin: '0 0 32px', maxWidth: 560 }}>
             {product.diagnosis}
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 44 }}>
             {product.symptoms.map(s => (
-              <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '13px 16px', background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 12 }}>
+              <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '13px 16px', background: '#252018', border: '1px solid rgba(255,245,230,0.08)', borderRadius: 12 }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B07D3A', flexShrink: 0, display: 'inline-block' }} />
                 <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12.5, letterSpacing: '0.04em' }}>{s}</span>
               </div>
             ))}
           </div>
 
-          <div style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.1)', borderRadius: 22, overflow: 'hidden', marginBottom: 52 }}>
-            <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#EEF2EB' }}>
+          <div style={{ background: '#252018', border: '1px solid rgba(255,245,230,0.08)', borderRadius: 22, overflow: 'hidden', marginBottom: 52 }}>
+            <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: 'rgba(58,82,48,0.2)' }}>
               <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ padding: '28px 28px 32px' }}>
-              <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9C968A', marginBottom: 10 }}>Your prescribed solution</div>
+              <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7A6E60', marginBottom: 10 }}>Your prescribed solution</div>
               <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 24, fontWeight: 700, margin: '0 0 10px' }}>{product.name}</h2>
-              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#1E1B16', marginBottom: 16 }}>${product.price.toFixed(2)}</div>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: 'rgba(30,27,22,0.65)', margin: '0 0 26px' }}>{product.prescription}</p>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#F0E6D3', marginBottom: 16 }}>${product.price.toFixed(2)}</div>
+              <p style={{ fontSize: 15, lineHeight: 1.72, color: 'rgba(240,230,211,0.6)', margin: '0 0 26px' }}>{product.prescription}</p>
               <button
                 className="ddi-btn-brass"
                 onClick={() => navigate(product.route)}
@@ -267,12 +267,12 @@ export default function App() {
           </div>
 
           <div style={{ marginBottom: 52 }}>
-            <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#9C968A', marginBottom: 22 }}>Also detected in your profile</div>
+            <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7A6E60', marginBottom: 22 }}>Also detected in your profile</div>
             <div className="ddi-other-grid">
               {otherProducts.map(p => (
                 <Link key={p.name} to={p.route} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <div style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 18, overflow: 'hidden', transition: 'box-shadow 0.18s' }} className="ddi-other-card">
-                    <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#EEF2EB' }}>
+                  <div style={{ background: '#252018', border: '1px solid rgba(255,245,230,0.08)', borderRadius: 18, overflow: 'hidden', transition: 'box-shadow 0.18s' }} className="ddi-other-card">
+                    <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: 'rgba(58,82,48,0.2)' }}>
                       <img src={p.image} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                     </div>
                     <div style={{ padding: '14px 14px 16px' }}>
@@ -285,13 +285,13 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{ background: '#1E1B16', borderRadius: 22, padding: '44px 32px', textAlign: 'center' }}>
-            <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(251,249,244,0.38)', marginBottom: 14 }}>Complete Recovery System</div>
-            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#FBF9F4', margin: '0 0 10px' }}>The Full Detox Kit</h3>
-            <p style={{ fontSize: 15, color: 'rgba(251,249,244,0.6)', margin: '0 0 10px', lineHeight: 1.65 }}>All 6 recovery tools for every zone your screen time is hitting.</p>
+          <div style={{ background: '#252018', borderRadius: 22, padding: '44px 32px', textAlign: 'center' }}>
+            <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(240,230,211,0.35)', marginBottom: 14 }}>Complete Recovery System</div>
+            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#F0E6D3', margin: '0 0 10px' }}>The Full Detox Kit</h3>
+            <p style={{ fontSize: 15, color: 'rgba(240,230,211,0.55)', margin: '0 0 10px', lineHeight: 1.65 }}>All 6 recovery tools for every zone your screen time is hitting.</p>
             <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, fontWeight: 700, color: '#B07D3A', marginBottom: 28 }}>
               $99.99{' '}
-              <span style={{ fontSize: 16, color: 'rgba(251,249,244,0.35)', textDecoration: 'line-through', fontWeight: 400 }}>$179.94</span>
+              <span style={{ fontSize: 16, color: 'rgba(240,230,211,0.35)', textDecoration: 'line-through', fontWeight: 400 }}>$179.94</span>
             </div>
             <button
               className="ddi-btn-brass"
@@ -337,7 +337,7 @@ export default function App() {
       <div style={{
         position: 'relative', zIndex: 2,
         width: '100%', maxWidth: 460,
-        background: 'rgba(255,255,255,0.82)',
+        background: 'rgba(37,32,24,0.92)',
         backdropFilter: 'blur(18px)',
         WebkitBackdropFilter: 'blur(18px)',
         borderRadius: 24,
@@ -346,16 +346,16 @@ export default function App() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 22 }}>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#B07D3A', display: 'inline-block' }} />
-          <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.52)' }}>Digital Detox Initiative</span>
+          <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(240,230,211,0.5)' }}>Digital Detox Initiative</span>
         </div>
 
         <SignalGauge progress={gaugeProgress} />
 
-        <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9C968A', textAlign: 'center', marginBottom: 14 }}>
+        <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#7A6E60', textAlign: 'center', marginBottom: 14 }}>
           Question {step + 1} of {QUESTIONS.length}
         </div>
 
-        <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 21, fontWeight: 600, lineHeight: 1.32, color: '#1E1B16', margin: '0 0 22px', textAlign: 'center' }}>
+        <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 21, fontWeight: 600, lineHeight: 1.32, color: '#F0E6D3', margin: '0 0 22px', textAlign: 'center' }}>
           {q.text}
         </h2>
 
@@ -367,10 +367,10 @@ export default function App() {
               onClick={() => handleAnswer(q.key, opt)}
               style={{
                 width: '100%', padding: '14px 16px',
-                background: 'rgba(255,255,255,0.72)',
-                border: '1px solid rgba(30,27,22,0.14)',
+                background: 'rgba(255,245,230,0.05)',
+                border: '1px solid rgba(255,245,230,0.12)',
                 borderRadius: 14,
-                fontFamily: "'Inter',sans-serif", fontSize: 14.5, color: '#1E1B16',
+                fontFamily: "'Inter',sans-serif", fontSize: 14.5, color: '#F0E6D3',
                 textAlign: 'left', cursor: 'pointer',
               }}
             >
@@ -389,15 +389,15 @@ const GLOBAL_STYLES = `
   body { margin: 0; }
 
   .ddi-option { transition: background 0.16s, border-color 0.16s, transform 0.16s; }
-  .ddi-option:hover { background: rgba(255,255,255,0.96) !important; border-color: #B07D3A !important; transform: translateX(2px); }
+  .ddi-option:hover { background: rgba(255,245,230,0.1) !important; border-color: #B07D3A !important; transform: translateX(2px); }
   .ddi-option:focus-visible { outline: 2px solid #B07D3A; outline-offset: 2px; }
 
   .ddi-btn-brass { transition: background 0.18s; }
   .ddi-btn-brass:hover { background: #9A6B2F !important; }
   .ddi-btn-outline { transition: background 0.16s, border-color 0.16s; }
-  .ddi-btn-outline:hover { background: #F4F6F1 !important; border-color: #3A5230 !important; }
+  .ddi-btn-outline:hover { background: rgba(255,245,230,0.1) !important; border-color: #3A5230 !important; }
   .ddi-other-card { transition: box-shadow 0.18s; }
-  .ddi-other-card:hover { box-shadow: 0 6px 24px rgba(30,27,22,0.1); }
+  .ddi-other-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
 
   .ddi-other-grid {
     display: grid;
