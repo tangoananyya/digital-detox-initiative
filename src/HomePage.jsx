@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const P = {
-  linen: '#FBF9F4',
+  linen: '#F2EDE4',
   charcoal: '#1E1B16',
   charcoalSoft: 'rgba(30,27,22,0.65)',
   brass: '#B07D3A',
   brassLight: 'rgba(176,125,58,0.15)',
   sage: '#3A5230',
-  sageBg: '#EEF2EB',
+  sageBg: '#E8E2D9',
   border: 'rgba(30,27,22,0.09)',
   haze: '#9C968A',
 };
@@ -130,7 +130,7 @@ export default function HomePage() {
         body { margin: 0; }
 
         .hp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; transition: background 0.4s ease, border-bottom-color 0.4s ease, backdrop-filter 0.4s ease; border-bottom: 1px solid transparent; }
-        .hp-nav--solid { background: rgba(251,249,244,0.96); backdrop-filter: blur(10px); border-bottom-color: ${P.border}; }
+        .hp-nav--solid { background: rgba(242,237,228,0.96); backdrop-filter: blur(10px); border-bottom-color: ${P.border}; }
         .hp-nav-brand { display: flex; align-items: center; gap: 8px; }
         .hp-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; flex-shrink: 0; }
         .hp-brand-text { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); transition: color 0.4s; }
@@ -181,7 +181,7 @@ export default function HomePage() {
         .hp-btn-outline-sage:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
         .hp-quiz-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.33); margin-top: 22px; }
 
-        .hp-reviews { background: #fff; padding: 100px 24px; }
+        .hp-reviews { background: #FAF7F2; padding: 100px 24px; }
         .hp-reviews-inner { max-width: 1800px; margin: 0 auto; }
         .hp-reviews-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.charcoalSoft}; text-align: center; margin-bottom: 12px; }
         .hp-reviews-headline { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: ${P.charcoal}; text-align: center; margin: 0 0 52px; }

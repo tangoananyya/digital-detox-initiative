@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const P = {
-  linen: '#FBF9F4',
+  linen: '#F2EDE4',
   charcoal: '#1E1B16',
   charcoalSoft: 'rgba(30,27,22,0.65)',
   brass: '#B07D3A',
   brassLight: 'rgba(176,125,58,0.15)',
   sage: '#3A5230',
-  sageBg: '#EEF2EB',
+  sageBg: '#E8E2D9',
   border: 'rgba(30,27,22,0.09)',
   haze: '#9C968A',
 };
@@ -82,7 +82,7 @@ function Popup({ onDismiss }) {
   };
   return (
     <div onClick={handleDismiss} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(30,27,22,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}>
-      <div onClick={e => e.stopPropagation()} style={{ background: '#fff', borderRadius: 20, padding: '32px 28px 28px', maxWidth: 440, width: 'calc(100% - 40px)', boxShadow: '0 16px 60px rgba(30,27,22,0.22)', border: `1px solid ${P.border}`, transform: `translateY(${visible ? '0' : '24px'}) scale(${visible ? 1 : 0.97})`, transition: 'transform 0.38s cubic-bezier(.32,.72,0,1)' }}>
+      <div onClick={e => e.stopPropagation()} style={{ background: '#FAF7F2', borderRadius: 20, padding: '32px 28px 28px', maxWidth: 440, width: 'calc(100% - 40px)', boxShadow: '0 16px 60px rgba(30,27,22,0.22)', border: `1px solid ${P.border}`, transform: `translateY(${visible ? '0' : '24px'}) scale(${visible ? 1 : 0.97})`, transition: 'transform 0.38s cubic-bezier(.32,.72,0,1)' }}>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
           <div style={{ padding: '10px 14px', background: P.brassLight, borderRadius: 12, display: 'inline-flex' }}>
             <GaugeIcon />
@@ -204,7 +204,7 @@ function CartDrawer({ cart, open, onClose, onUpdateQty, onRemove, onCheckout }) 
   return (
     <>
       <div onClick={onClose} aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 800, background: 'rgba(30,27,22,0.45)', opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none', transition: 'opacity 0.32s ease' }} />
-      <div role="dialog" aria-label="Shopping cart" style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '100%', maxWidth: 380, background: '#fff', zIndex: 900, display: 'flex', flexDirection: 'column', transform: open ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.36s cubic-bezier(.32,.72,0,1)', boxShadow: '-8px 0 48px rgba(30,27,22,0.14)' }}>
+      <div role="dialog" aria-label="Shopping cart" style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '100%', maxWidth: 380, background: '#FAF7F2', zIndex: 900, display: 'flex', flexDirection: 'column', transform: open ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.36s cubic-bezier(.32,.72,0,1)', boxShadow: '-8px 0 48px rgba(30,27,22,0.14)' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', borderBottom: `1px solid ${P.border}`, flexShrink: 0 }}>
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, color: P.charcoal }}>Your Cart</span>
           <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, color: P.charcoal, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 8 }} aria-label="Close cart">
@@ -355,7 +355,7 @@ export default function BackStretcher() {
         *, *::before, *::after { box-sizing: border-box; }
         body { margin: 0; }
 
-        .pp-nav { position: sticky; top: 0; z-index: 100; background: rgba(251,249,244,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
+        .pp-nav { position: sticky; top: 0; z-index: 100; background: rgba(242,237,228,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
         .pp-nav::after { content: ''; position: absolute; bottom: 0; left: 0; height: 1px; width: 0; background: ${P.brass}; animation: pp-nav-border 0.8s ease 0.2s forwards; }
         .pp-nav-brand { display: flex; align-items: center; gap: 8px; }
         .pp-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; flex-shrink: 0; }
@@ -410,7 +410,7 @@ export default function BackStretcher() {
 
         .pp-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         @media (max-width: 600px) { .pp-benefits-grid { grid-template-columns: 1fr; } }
-        .pp-benefit-card { background: #fff; border: 1px solid ${P.border}; border-radius: 18px; padding: 28px 24px; text-align: center; }
+        .pp-benefit-card { background: #FAF7F2; border: 1px solid ${P.border}; border-radius: 18px; padding: 28px 24px; text-align: center; }
         .pp-benefit-icon { margin-bottom: 16px; display: flex; justify-content: center; }
         .pp-benefit-name { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 8px; }
         .pp-benefit-desc { font-size: 13.5px; color: ${P.charcoalSoft}; line-height: 1.65; margin: 0; }
@@ -425,8 +425,8 @@ export default function BackStretcher() {
         .pp-spec-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: ${P.haze}; margin-bottom: 5px; }
         .pp-spec-value { font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; color: ${P.charcoal}; }
 
-        .pp-review-card { background: #fff; border: 1px solid ${P.border}; border-radius: 18px; padding: 26px 22px; height: 100%; box-sizing: border-box; }
-        .pp-carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1px solid ${P.border}; cursor: pointer; display: flex; align-items: center; justify-content: center; color: ${P.charcoal}; z-index: 2; box-shadow: 0 2px 8px rgba(30,27,22,0.09); transition: background 0.15s, border-color 0.15s; padding: 0; }
+        .pp-review-card { background: #FAF7F2; border: 1px solid ${P.border}; border-radius: 18px; padding: 26px 22px; height: 100%; box-sizing: border-box; }
+        .pp-carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #FAF7F2; border: 1px solid ${P.border}; cursor: pointer; display: flex; align-items: center; justify-content: center; color: ${P.charcoal}; z-index: 2; box-shadow: 0 2px 8px rgba(30,27,22,0.09); transition: background 0.15s, border-color 0.15s; padding: 0; }
         .pp-carousel-arrow:hover:not(:disabled) { background: ${P.sageBg}; border-color: rgba(30,27,22,0.25); }
         .pp-carousel-arrow:disabled { opacity: 0.3; cursor: default; }
         .pp-carousel-arrow-prev { left: 0; }
@@ -466,7 +466,7 @@ export default function BackStretcher() {
         .pp-stock-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; display: inline-block; flex-shrink: 0; }
         .pp-stock-text { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: ${P.brass}; }
 
-        .pp-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: rgba(251,249,244,0.96); backdrop-filter: blur(12px); border-top: 1px solid ${P.border}; padding: 14px 24px; display: flex; align-items: center; gap: 16px; transform: translateY(100%); transition: transform 0.36s cubic-bezier(.32,.72,0,1); }
+        .pp-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: rgba(242,237,228,0.96); backdrop-filter: blur(12px); border-top: 1px solid ${P.border}; padding: 14px 24px; display: flex; align-items: center; gap: 16px; transform: translateY(100%); transition: transform 0.36s cubic-bezier(.32,.72,0,1); }
         .pp-sticky-bar--visible { transform: translateY(0); }
         .pp-sticky-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: ${P.charcoal}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .pp-sticky-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: ${P.charcoalSoft}; text-transform: uppercase; margin-top: 2px; }

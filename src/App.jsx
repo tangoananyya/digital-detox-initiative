@@ -217,7 +217,7 @@ export default function App() {
 
   if (isDone && product) {
     return (
-      <div style={{ minHeight: '100vh', background: '#FBF9F4', fontFamily: "'Inter',system-ui,sans-serif", color: '#1E1B16' }}>
+      <div style={{ minHeight: '100vh', background: '#F2EDE4', fontFamily: "'Inter',system-ui,sans-serif", color: '#1E1B16' }}>
         <style>{GLOBAL_STYLES}</style>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '48px 24px 96px' }}>
 
@@ -240,15 +240,15 @@ export default function App() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 44 }}>
             {product.symptoms.map(s => (
-              <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '13px 16px', background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 12 }}>
+              <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '13px 16px', background: '#FAF7F2', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 12 }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B07D3A', flexShrink: 0, display: 'inline-block' }} />
                 <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 12.5, letterSpacing: '0.04em' }}>{s}</span>
               </div>
             ))}
           </div>
 
-          <div style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.1)', borderRadius: 22, overflow: 'hidden', marginBottom: 52 }}>
-            <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#EEF2EB' }}>
+          <div style={{ background: '#FAF7F2', border: '1px solid rgba(30,27,22,0.1)', borderRadius: 22, overflow: 'hidden', marginBottom: 52 }}>
+            <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#E8E2D9' }}>
               <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ padding: '28px 28px 32px' }}>
@@ -271,8 +271,8 @@ export default function App() {
             <div className="ddi-other-grid">
               {otherProducts.map(p => (
                 <Link key={p.name} to={p.route} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <div style={{ background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 18, overflow: 'hidden', transition: 'box-shadow 0.18s' }} className="ddi-other-card">
-                    <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#EEF2EB' }}>
+                  <div style={{ background: '#FAF7F2', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 18, overflow: 'hidden', transition: 'box-shadow 0.18s' }} className="ddi-other-card">
+                    <div style={{ width: '100%', aspectRatio: '1 / 1', overflow: 'hidden', background: '#E8E2D9' }}>
                       <img src={p.image} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                     </div>
                     <div style={{ padding: '14px 14px 16px' }}>
@@ -287,7 +287,7 @@ export default function App() {
 
           <div style={{ background: '#1E1B16', borderRadius: 22, padding: '44px 32px', textAlign: 'center' }}>
             <div style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(251,249,244,0.35)', marginBottom: 14 }}>Complete Recovery System</div>
-            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#FBF9F4', margin: '0 0 10px' }}>The Full Detox Kit</h3>
+            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 30, fontWeight: 700, color: '#F2EDE4', margin: '0 0 10px' }}>The Full Detox Kit</h3>
             <p style={{ fontSize: 15, color: 'rgba(251,249,244,0.6)', margin: '0 0 10px', lineHeight: 1.65 }}>All 6 recovery tools for every zone your screen time is hitting.</p>
             <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 26, fontWeight: 700, color: '#B07D3A', marginBottom: 28 }}>
               $99.99{' '}
@@ -367,7 +367,7 @@ export default function App() {
               onClick={() => handleAnswer(q.key, opt)}
               style={{
                 width: '100%', padding: '14px 16px',
-                background: 'rgba(255,255,255,0.72)',
+                background: 'transparent',
                 border: '1px solid rgba(30,27,22,0.14)',
                 borderRadius: 14,
                 fontFamily: "'Inter',sans-serif", fontSize: 14.5, color: '#1E1B16',
@@ -389,13 +389,13 @@ const GLOBAL_STYLES = `
   body { margin: 0; }
 
   .ddi-option { transition: background 0.16s, border-color 0.16s, transform 0.16s; }
-  .ddi-option:hover { background: rgba(255,255,255,0.96) !important; border-color: #B07D3A !important; transform: translateX(2px); }
+  .ddi-option:hover { background: #EDE8DF !important; border-color: #B07D3A !important; transform: translateX(2px); }
   .ddi-option:focus-visible { outline: 2px solid #B07D3A; outline-offset: 2px; }
 
   .ddi-btn-brass { transition: background 0.18s; }
   .ddi-btn-brass:hover { background: #9A6B2F !important; }
   .ddi-btn-outline { transition: background 0.16s, border-color 0.16s; }
-  .ddi-btn-outline:hover { background: #F4F6F1 !important; border-color: #3A5230 !important; }
+  .ddi-btn-outline:hover { background: #EDE8DF !important; border-color: #3A5230 !important; }
   .ddi-other-card { transition: box-shadow 0.18s; }
   .ddi-other-card:hover { box-shadow: 0 6px 24px rgba(30,27,22,0.1); }
 

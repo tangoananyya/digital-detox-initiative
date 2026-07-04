@@ -10,7 +10,7 @@ export default function Success() {
   return (
     <div style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-      backgroundColor: '#FBF9F4', fontFamily: "'Inter', system-ui, sans-serif", color: '#1E1B16',
+      backgroundColor: '#F2EDE4', fontFamily: "'Inter', system-ui, sans-serif", color: '#1E1B16',
       padding: '48px 20px', boxSizing: 'border-box',
     }}>
       <style>{`
@@ -30,7 +30,7 @@ export default function Success() {
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 32 }}>
           <svg width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
-            <circle cx="36" cy="36" r="34" stroke="#B07D3A" strokeWidth="2" fill="#FBF9F4" />
+            <circle cx="36" cy="36" r="34" stroke="#B07D3A" strokeWidth="2" fill="#F2EDE4" />
             <circle cx="36" cy="36" r="28" fill="#F5ECD8" />
             <path d="M22 36 L31 45 L50 27" stroke="#B07D3A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
           </svg>
@@ -44,7 +44,7 @@ export default function Success() {
           Check your email for an order confirmation and tracking details. Your kit ships within 3 business days.
         </p>
 
-        <div style={{ marginTop: 28, marginBottom: 36, padding: '14px 20px', background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 12, display: 'inline-block' }}>
+        <div style={{ marginTop: 28, marginBottom: 36, padding: '14px 20px', background: '#FAF7F2', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 12, display: 'inline-block' }}>
           <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.4)' }}>Order reference</span>
           <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 15, letterSpacing: '0.14em', color: '#1E1B16', marginTop: 4 }}>DDI-{ref}</div>
         </div>

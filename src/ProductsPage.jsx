@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const P = {
-  linen: '#FBF9F4',
+  linen: '#F2EDE4',
   charcoal: '#1E1B16',
   charcoalSoft: 'rgba(30,27,22,0.65)',
   brass: '#B07D3A',
   brassLight: 'rgba(176,125,58,0.15)',
-  sageBg: '#EEF2EB',
+  sageBg: '#E8E2D9',
   border: 'rgba(30,27,22,0.09)',
   haze: '#9C968A',
 };
@@ -31,7 +31,7 @@ export default function ProductsPage() {
         *, *::before, *::after { box-sizing: border-box; }
         body { margin: 0; }
 
-        .pg-nav { position: sticky; top: 0; z-index: 100; background: rgba(251,249,244,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
+        .pg-nav { position: sticky; top: 0; z-index: 100; background: rgba(242,237,228,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
         .pg-nav::after { content: ''; position: absolute; bottom: 0; left: 0; height: 1px; width: 0; background: ${P.brass}; animation: pg-nav-border 0.8s ease 0.2s forwards; }
         .pg-nav-brand { display: flex; align-items: center; gap: 8px; }
         .pg-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; flex-shrink: 0; }
@@ -46,7 +46,7 @@ export default function ProductsPage() {
 
         .pg-hero { background: ${P.charcoal}; padding: 80px 24px 72px; text-align: center; }
         .pg-hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.38); margin-bottom: 18px; }
-        .pg-hero-title { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 800; color: #FBF9F4; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.08; }
+        .pg-hero-title { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 800; color: #F2EDE4; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.08; }
         @media (max-width: 600px) { .pg-hero-title { font-size: 34px; } }
         .pg-hero-sub { font-size: 17px; color: ${P.haze}; margin: 0; line-height: 1.65; max-width: 520px; margin: 0 auto; }
 
@@ -55,7 +55,7 @@ export default function ProductsPage() {
         @media (max-width: 860px) { .pg-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 480px) { .pg-grid { grid-template-columns: 1fr; } }
 
-        .pg-card { background: #fff; border: 1px solid ${P.border}; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+        .pg-card { background: #FAF7F2; border: 1px solid ${P.border}; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
         .pg-card:hover { box-shadow: 0 8px 32px rgba(30,27,22,0.09); }
         .pg-card-img { width: 100%; aspect-ratio: 1 / 1; background: ${P.sageBg}; border: 2px dashed #C8D4C2; display: flex; align-items: center; justify-content: center; box-sizing: border-box; flex-shrink: 0; overflow: hidden; border-radius: 12px 12px 0 0; }
         .pg-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
