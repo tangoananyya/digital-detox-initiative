@@ -78,10 +78,10 @@ export default function ProductsPage() {
       `}</style>
 
       <nav className="pg-nav">
-        <div className="pg-nav-brand">
+        <Link to="/home" className="pg-nav-brand" style={{ textDecoration: 'none' }}>
           <span className="pg-brand-dot" />
           <span className="pg-brand-text">Digital Detox Initiative</span>
-        </div>
+        </Link>
         <div className="pg-nav-right">
           <Link to="/home" className="pg-nav-link">Home</Link>
           <Link to="/products" className="pg-nav-link">All Products</Link>

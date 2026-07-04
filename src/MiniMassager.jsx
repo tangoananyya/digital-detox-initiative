@@ -459,10 +459,10 @@ export default function MiniMassager() {
       `}</style>
 
       <nav className="pp-nav">
-        <div className="pp-nav-brand">
+        <Link to="/home" className="pp-nav-brand" style={{ textDecoration: 'none' }}>
           <span className="pp-brand-dot" />
           <span className="pp-brand-text">Digital Detox Initiative</span>
-        </div>
+        </Link>
         <div className="pp-nav-right">
           <Link to="/home" className="pp-nav-link">Home</Link>
           <Link to="/products" className="pp-nav-link">All Products</Link>
