@@ -103,7 +103,7 @@ export default function ProductsPage() {
       </nav>
 
       <section className="pg-hero">
-        <img src={`${BASE}images/banner.webp`} alt="" className="pg-hero-bg-img" aria-hidden="true" />
+        <img src={`${BASE}images/banner.jpg`} alt="" className="pg-hero-bg-img" aria-hidden="true" />
         <div className="pg-hero-overlay" />
         <div className="pg-hero-label">The Full Recovery Collection</div>
         <h1 className="pg-hero-title">The Full Recovery Collection</h1>
