@@ -44,9 +44,10 @@ export default function ProductsPage() {
         .pg-cart-icon { padding: 7px; color: ${P.charcoal}; display: flex; align-items: center; border-radius: 10px; transition: background 0.15s; text-decoration: none; }
         .pg-cart-icon:hover { background: ${P.sageBg}; }
 
-        .pg-hero { background-color: ${P.charcoal}; padding: 80px 24px 72px; text-align: center; position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; }
-        .pg-hero::before { content: ''; position: absolute; inset: 0; background: rgba(20,17,12,0.55); }
-        .pg-hero > * { position: relative; z-index: 1; }
+        .pg-hero { background-color: ${P.charcoal}; padding: 80px 24px 72px; text-align: center; position: relative; overflow: hidden; }
+        .pg-hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+        .pg-hero-overlay { position: absolute; inset: 0; background: rgba(20,17,12,0.55); z-index: 1; }
+        .pg-hero > *:not(.pg-hero-bg-img):not(.pg-hero-overlay) { position: relative; z-index: 2; }
         .pg-hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.38); margin-bottom: 18px; }
         .pg-hero-title { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 800; color: #F2EDE4; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.08; }
         @media (max-width: 600px) { .pg-hero-title { font-size: 34px; } }
@@ -101,7 +102,9 @@ export default function ProductsPage() {
         </div>
       </nav>
 
-      <section className="pg-hero" style={{ backgroundImage: `url(${BASE}images/banner.webp)` }}>
+      <section className="pg-hero">
+        <img src={`${BASE}images/banner.webp`} alt="" className="pg-hero-bg-img" aria-hidden="true" />
+        <div className="pg-hero-overlay" />
         <div className="pg-hero-label">The Full Recovery Collection</div>
         <h1 className="pg-hero-title">The Full Recovery Collection</h1>
         <p className="pg-hero-sub">Every product designed around one idea. Your body was not built for screens.</p>
