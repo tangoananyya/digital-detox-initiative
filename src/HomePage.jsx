@@ -245,10 +245,10 @@ export default function HomePage() {
 
       {/* ── NAV ──────────────────────────────────────────────────── */}
       <nav className={`hp-nav${navSolid ? ' hp-nav--solid' : ''}`}>
-        <div className="hp-nav-brand">
+        <Link to="/home" className="hp-nav-brand" style={{ textDecoration: 'none' }}>
           <span className="hp-brand-dot" />
           <span className="hp-brand-text">Digital Detox Initiative</span>
-        </div>
+        </Link>
         <div className="hp-nav-right">
           <Link to="/products" className="hp-nav-link">All Products</Link>
           <Link to="/quiz" className="hp-nav-quiz">
