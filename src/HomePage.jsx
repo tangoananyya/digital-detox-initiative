@@ -25,7 +25,7 @@ const HERO_IMAGES = [
 
 const PRODUCT_GRID = [
   { src: `${BASE}images/hero.png`,              href: '/' },
-  { src: `${BASE}images/back4.png`,             href: '/back-stretcher' },
+  { src: `${BASE}images/back2.png`,             href: '/back-stretcher' },
   { src: `${BASE}images/ballm2.png`,            href: '/roller' },
   { src: `${BASE}images/robomassage5.png`,      href: '/massager' },
   { src: `${BASE}images/posture2.png`,          href: '/posture' },
