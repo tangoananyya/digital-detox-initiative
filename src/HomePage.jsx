@@ -158,13 +158,13 @@ export default function HomePage() {
         @keyframes hp-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.55; } 50% { transform: translateX(-50%) translateY(9px); opacity: 0.3; } }
 
         .hp-stats { background: #252018; padding: 100px 24px; }
-        .hp-stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px; }
+        .hp-stats-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px; }
         .hp-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 84px; font-weight: 800; color: ${P.brass}; line-height: 1; margin-bottom: 18px; letter-spacing: -0.03em; }
         .hp-stat-headline { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin: 0 0 12px; line-height: 1.4; }
         .hp-stat-body { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.48); margin: 0; }
 
         .hp-solution { padding: 100px 24px; background: ${P.linen}; }
-        .hp-solution-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .hp-solution-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .hp-solution-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.brass}; margin-bottom: 16px; }
         .hp-solution-headline { font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 800; color: ${P.charcoal}; line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 20px; }
         .hp-solution-body { font-size: 16px; line-height: 1.78; color: ${P.charcoalSoft}; margin: 0 0 32px; }
@@ -182,7 +182,7 @@ export default function HomePage() {
         .hp-quiz-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.33); margin-top: 22px; }
 
         .hp-reviews { background: #252018; padding: 100px 24px; }
-        .hp-reviews-inner { max-width: 1100px; margin: 0 auto; }
+        .hp-reviews-inner { max-width: 1400px; margin: 0 auto; }
         .hp-reviews-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.charcoalSoft}; text-align: center; margin-bottom: 12px; }
         .hp-reviews-headline { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: ${P.charcoal}; text-align: center; margin: 0 0 52px; }
         .hp-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -194,7 +194,7 @@ export default function HomePage() {
         .hp-review-product { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: ${P.brass}; background: ${P.brassLight}; padding: 3px 8px; border-radius: 5px; }
 
         .hp-values { background: ${P.linen}; padding: 100px 24px; border-top: 1px solid ${P.border}; }
-        .hp-values-inner { max-width: 1100px; margin: 0 auto; }
+        .hp-values-inner { max-width: 1400px; margin: 0 auto; }
         .hp-values-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.charcoalSoft}; text-align: center; margin-bottom: 56px; }
         .hp-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
         .hp-value-item { border-top: 1.5px solid ${P.brass}; padding-top: 24px; }

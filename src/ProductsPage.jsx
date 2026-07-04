@@ -50,7 +50,7 @@ export default function ProductsPage() {
         @media (max-width: 600px) { .pg-hero-title { font-size: 34px; } }
         .pg-hero-sub { font-size: 17px; color: ${P.haze}; margin: 0; line-height: 1.65; max-width: 520px; margin: 0 auto; }
 
-        .pg-grid-wrap { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+        .pg-grid-wrap { max-width: 1400px; margin: 0 auto; padding: 64px 40px; }
         .pg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
         @media (max-width: 860px) { .pg-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 480px) { .pg-grid { grid-template-columns: 1fr; } }
