@@ -237,7 +237,7 @@ export default function App() {
     return (
       <div style={{ minHeight: '100vh', background: '#F2EDE4', fontFamily: "'Inter',system-ui,sans-serif", color: '#1E1B16' }}>
         <style>{GLOBAL_STYLES}</style>
-        <div style={{ maxWidth: 680, margin: '0 auto', padding: '48px 24px 96px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '48px 48px 96px' }}>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 44 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -422,11 +422,14 @@ const GLOBAL_STYLES = `
 
   .ddi-other-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
   }
+  @media (max-width: 860px) {
+    .ddi-other-grid { grid-template-columns: repeat(3, 1fr); }
+  }
   @media (max-width: 480px) {
-    .ddi-other-grid { grid-template-columns: 1fr; }
+    .ddi-other-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 360px) {
     h1 { font-size: 30px !important; }
