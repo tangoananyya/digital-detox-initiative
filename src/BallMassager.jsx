@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const P = {
-  linen: '#1C1814',
-  charcoal: '#F0E6D3',
-  charcoalSoft: 'rgba(240,230,211,0.6)',
+  linen: '#FBF9F4',
+  charcoal: '#1E1B16',
+  charcoalSoft: 'rgba(30,27,22,0.65)',
   brass: '#B07D3A',
   brassLight: 'rgba(176,125,58,0.15)',
   sage: '#3A5230',
-  sageBg: 'rgba(58,82,48,0.2)',
-  border: 'rgba(255,245,230,0.08)',
-  haze: '#7A6E60',
+  sageBg: '#EEF2EB',
+  border: 'rgba(30,27,22,0.09)',
+  haze: '#9C968A',
 };
 
 function StarRow({ rating, count }) {
@@ -20,7 +20,7 @@ function StarRow({ rating, count }) {
     <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
       <div style={{ display: 'flex', gap: 2 }}>
         {[...Array(5)].map((_, i) => (
-          <svg key={i} width="16" height="16" viewBox="0 0 16 16" fill={i < full ? P.brass : (i === full && half ? P.brass : 'rgba(255,245,230,0.2)')} opacity={i === full && half ? 0.55 : 1}>
+          <svg key={i} width="16" height="16" viewBox="0 0 16 16" fill={i < full ? P.brass : (i === full && half ? P.brass : '#D8D0C4')} opacity={i === full && half ? 0.55 : 1}>
             <polygon points="8,1.5 10,6 15,6.5 11.5,10 12.5,15 8,12.5 3.5,15 4.5,10 1,6.5 6,6" />
           </svg>
         ))}
@@ -78,8 +78,8 @@ function Popup({ onDismiss }) {
   }, []);
   const handleDismiss = () => { setVisible(false); setTimeout(onDismiss, 380); };
   return (
-    <div onClick={handleDismiss} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}>
-      <div onClick={e => e.stopPropagation()} style={{ background: '#252018', borderRadius: 20, padding: '32px 28px 28px', maxWidth: 440, width: 'calc(100% - 40px)', boxShadow: '0 16px 60px rgba(0,0,0,0.5)', border: `1px solid ${P.border}`, transform: `translateY(${visible ? '0' : '24px'}) scale(${visible ? 1 : 0.97})`, transition: 'transform 0.38s cubic-bezier(.32,.72,0,1)' }}>
+    <div onClick={handleDismiss} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(30,27,22,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}>
+      <div onClick={e => e.stopPropagation()} style={{ background: '#fff', borderRadius: 20, padding: '32px 28px 28px', maxWidth: 440, width: 'calc(100% - 40px)', boxShadow: '0 16px 60px rgba(30,27,22,0.22)', border: `1px solid ${P.border}`, transform: `translateY(${visible ? '0' : '24px'}) scale(${visible ? 1 : 0.97})`, transition: 'transform 0.38s cubic-bezier(.32,.72,0,1)' }}>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
           <div style={{ padding: '10px 14px', background: P.brassLight, borderRadius: 12, display: 'inline-flex' }}>
             <GaugeIcon />
@@ -178,7 +178,7 @@ function ReviewCarousel({ reviews }) {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 6, marginTop: 28 }}>
         {Array.from({ length: maxIndex + 1 }, (_, i) => (
-          <button key={i} onClick={() => setCurrent(i)} aria-label={`Go to slide ${i + 1}`} style={{ width: i === current ? 22 : 8, height: 8, borderRadius: 4, background: i === current ? P.brass : 'rgba(255,245,230,0.16)', border: 'none', cursor: 'pointer', padding: 0, transition: 'width 0.3s ease, background 0.3s ease' }} />
+          <button key={i} onClick={() => setCurrent(i)} aria-label={`Go to slide ${i + 1}`} style={{ width: i === current ? 22 : 8, height: 8, borderRadius: 4, background: i === current ? P.brass : 'rgba(30,27,22,0.16)', border: 'none', cursor: 'pointer', padding: 0, transition: 'width 0.3s ease, background 0.3s ease' }} />
         ))}
       </div>
     </div>
@@ -193,8 +193,8 @@ function CartDrawer({ cart, open, onClose, onUpdateQty, onRemove, onCheckout }) 
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
   return (
     <>
-      <div onClick={onClose} aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 800, background: 'rgba(0,0,0,0.65)', opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none', transition: 'opacity 0.32s ease' }} />
-      <div role="dialog" aria-label="Shopping cart" style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '100%', maxWidth: 380, background: '#252018', zIndex: 900, display: 'flex', flexDirection: 'column', transform: open ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.36s cubic-bezier(.32,.72,0,1)', boxShadow: '-8px 0 48px rgba(0,0,0,0.3)' }}>
+      <div onClick={onClose} aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 800, background: 'rgba(30,27,22,0.45)', opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none', transition: 'opacity 0.32s ease' }} />
+      <div role="dialog" aria-label="Shopping cart" style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '100%', maxWidth: 380, background: '#fff', zIndex: 900, display: 'flex', flexDirection: 'column', transform: open ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.36s cubic-bezier(.32,.72,0,1)', boxShadow: '-8px 0 48px rgba(30,27,22,0.14)' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', borderBottom: `1px solid ${P.border}`, flexShrink: 0 }}>
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, color: P.charcoal }}>Your Cart</span>
           <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, color: P.charcoal, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 8 }} aria-label="Close cart">
@@ -338,7 +338,7 @@ export default function BallMassager() {
         *, *::before, *::after { box-sizing: border-box; }
         body { margin: 0; }
 
-        .pp-nav { position: sticky; top: 0; z-index: 100; background: rgba(28,24,20,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
+        .pp-nav { position: sticky; top: 0; z-index: 100; background: rgba(251,249,244,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
         .pp-nav::after { content: ''; position: absolute; bottom: 0; left: 0; height: 1px; width: 0; background: ${P.brass}; animation: pp-nav-border 0.8s ease 0.2s forwards; }
         .pp-nav-brand { display: flex; align-items: center; gap: 8px; }
         .pp-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; flex-shrink: 0; }
@@ -380,8 +380,8 @@ export default function BallMassager() {
         .pp-atc { width: 100%; padding: 16px 18px; background: ${P.brass}; color: #fff; border: none; border-radius: 14px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 10px; transition: background 0.18s; position: relative; overflow: hidden; }
         .pp-atc:hover { background: #9A6B2F; }
         .pp-atc::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent); animation: pp-btn-shimmer 4s ease-in-out 2s infinite; pointer-events: none; }
-        .pp-buy-now { width: 100%; padding: 14px 18px; background: transparent; color: ${P.charcoal}; border: 1.5px solid rgba(255,245,230,0.2); border-radius: 14px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 16px; transition: border-color 0.18s, background 0.18s; }
-        .pp-buy-now:hover { border-color: ${P.charcoal}; background: rgba(255,245,230,0.05); }
+        .pp-buy-now { width: 100%; padding: 14px 18px; background: transparent; color: ${P.charcoal}; border: 1.5px solid rgba(30,27,22,0.28); border-radius: 14px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 16px; transition: border-color 0.18s, background 0.18s; }
+        .pp-buy-now:hover { border-color: ${P.charcoal}; background: rgba(30,27,22,0.04); }
 
         .pp-trust { display: flex; gap: 16px; flex-wrap: wrap; }
         .pp-trust-badge { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: ${P.charcoalSoft}; display: flex; align-items: center; gap: 5px; }
@@ -393,7 +393,7 @@ export default function BallMassager() {
 
         .pp-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         @media (max-width: 600px) { .pp-benefits-grid { grid-template-columns: 1fr; } }
-        .pp-benefit-card { background: #252018; border: 1px solid ${P.border}; border-radius: 18px; padding: 28px 24px; text-align: center; }
+        .pp-benefit-card { background: #fff; border: 1px solid ${P.border}; border-radius: 18px; padding: 28px 24px; text-align: center; }
         .pp-benefit-icon { margin-bottom: 16px; display: flex; justify-content: center; }
         .pp-benefit-name { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin: 0 0 8px; }
         .pp-benefit-desc { font-size: 13.5px; color: ${P.charcoalSoft}; line-height: 1.65; margin: 0; }
@@ -408,9 +408,9 @@ export default function BallMassager() {
         .pp-spec-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: ${P.haze}; margin-bottom: 5px; }
         .pp-spec-value { font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; color: ${P.charcoal}; }
 
-        .pp-review-card { background: #252018; border: 1px solid ${P.border}; border-radius: 18px; padding: 26px 22px; height: 100%; box-sizing: border-box; }
-        .pp-carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #252018; border: 1px solid ${P.border}; cursor: pointer; display: flex; align-items: center; justify-content: center; color: ${P.charcoal}; z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: background 0.15s, border-color 0.15s; padding: 0; }
-        .pp-carousel-arrow:hover:not(:disabled) { background: ${P.sageBg}; border-color: rgba(255,245,230,0.2); }
+        .pp-review-card { background: #fff; border: 1px solid ${P.border}; border-radius: 18px; padding: 26px 22px; height: 100%; box-sizing: border-box; }
+        .pp-carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1px solid ${P.border}; cursor: pointer; display: flex; align-items: center; justify-content: center; color: ${P.charcoal}; z-index: 2; box-shadow: 0 2px 8px rgba(30,27,22,0.09); transition: background 0.15s, border-color 0.15s; padding: 0; }
+        .pp-carousel-arrow:hover:not(:disabled) { background: ${P.sageBg}; border-color: rgba(30,27,22,0.25); }
         .pp-carousel-arrow:disabled { opacity: 0.3; cursor: default; }
         .pp-carousel-arrow-prev { left: 0; }
         .pp-carousel-arrow-next { right: 0; }
@@ -418,11 +418,11 @@ export default function BallMassager() {
         .pp-review-text { font-size: 14px; line-height: 1.72; color: ${P.charcoalSoft}; margin: 0 0 16px; font-style: italic; }
         .pp-review-name { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: ${P.charcoal}; }
 
-        .pp-cta-section { background: #252018; padding: 80px 24px; text-align: center; }
-        .pp-cta-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,230,211,0.4); margin-bottom: 14px; }
+        .pp-cta-section { background: ${P.charcoal}; padding: 80px 24px; text-align: center; }
+        .pp-cta-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.45); margin-bottom: 14px; }
         .pp-cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: ${P.charcoal}; margin: 0 0 14px; }
         @media (max-width: 480px) { .pp-cta-title { font-size: 26px; } }
-        .pp-cta-sub { font-size: 16px; color: rgba(240,230,211,0.55); margin: 0 0 36px; line-height: 1.65; }
+        .pp-cta-sub { font-size: 16px; color: rgba(251,249,244,0.6); margin: 0 0 36px; line-height: 1.65; }
         .pp-cta-btn { display: inline-block; padding: 17px 36px; background: ${P.brass}; color: #fff; border: none; border-radius: 14px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.18s; }
         .pp-cta-btn:hover { background: #9A6B2F; }
 
@@ -445,7 +445,7 @@ export default function BallMassager() {
         .pp-stock-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; display: inline-block; flex-shrink: 0; }
         .pp-stock-text { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: ${P.brass}; }
 
-        .pp-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: rgba(28,24,20,0.97); backdrop-filter: blur(12px); border-top: 1px solid ${P.border}; padding: 14px 24px; display: flex; align-items: center; gap: 16px; transform: translateY(100%); transition: transform 0.36s cubic-bezier(.32,.72,0,1); }
+        .pp-sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 500; background: rgba(251,249,244,0.96); backdrop-filter: blur(12px); border-top: 1px solid ${P.border}; padding: 14px 24px; display: flex; align-items: center; gap: 16px; transform: translateY(100%); transition: transform 0.36s cubic-bezier(.32,.72,0,1); }
         .pp-sticky-bar--visible { transform: translateY(0); }
         .pp-sticky-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: ${P.charcoal}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .pp-sticky-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: ${P.charcoalSoft}; text-transform: uppercase; margin-top: 2px; }
@@ -477,7 +477,7 @@ export default function BallMassager() {
           .pp-sticky-atc { padding: 10px 14px; font-size: 13px; }
           .pp-spec:not(:nth-child(3n)) { border-right: none; padding-right: 0; }
           .pp-spec:not(:nth-child(3n+1)) { padding-left: 0; }
-          .pp-spec:nth-child(odd) { border-right: 1px solid rgba(255,245,230,0.08); padding-right: 14px; }
+          .pp-spec:nth-child(odd) { border-right: 1px solid rgba(30,27,22,0.1); padding-right: 14px; }
           .pp-spec:nth-child(even) { padding-left: 14px; }
         }
         @media (max-width: 400px) {
@@ -650,7 +650,7 @@ export default function BallMassager() {
       {showPopup && <Popup onDismiss={handleDismiss} />}
 
       {zoom.active && zoom.rect && (
-        <div aria-hidden="true" style={{ position: 'fixed', left: zoom.clientX - LENS_R, top: zoom.clientY - LENS_R, width: LENS_R * 2, height: LENS_R * 2, borderRadius: '50%', border: '2px solid #B07D3A', boxShadow: '0 4px 20px rgba(0,0,0,0.5)', backgroundImage: `url(${heroImg})`, backgroundSize: `${zoom.rect.width * ZOOM_FACTOR}px ${zoom.rect.height * ZOOM_FACTOR}px`, backgroundPosition: `${-(zoom.x * zoom.rect.width * ZOOM_FACTOR) + LENS_R}px ${-(zoom.y * zoom.rect.height * ZOOM_FACTOR) + LENS_R}px`, zIndex: 300, pointerEvents: 'none', overflow: 'hidden' }} />
+        <div aria-hidden="true" style={{ position: 'fixed', left: zoom.clientX - LENS_R, top: zoom.clientY - LENS_R, width: LENS_R * 2, height: LENS_R * 2, borderRadius: '50%', border: '2px solid #B07D3A', boxShadow: '0 4px 20px rgba(30,27,22,0.22)', backgroundImage: `url(${heroImg})`, backgroundSize: `${zoom.rect.width * ZOOM_FACTOR}px ${zoom.rect.height * ZOOM_FACTOR}px`, backgroundPosition: `${-(zoom.x * zoom.rect.width * ZOOM_FACTOR) + LENS_R}px ${-(zoom.y * zoom.rect.height * ZOOM_FACTOR) + LENS_R}px`, zIndex: 300, pointerEvents: 'none', overflow: 'hidden' }} />
       )}
     </div>
   );

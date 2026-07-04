@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const P = {
-  linen: '#1C1814',
-  charcoal: '#F0E6D3',
-  charcoalSoft: 'rgba(240,230,211,0.6)',
+  linen: '#FBF9F4',
+  charcoal: '#1E1B16',
+  charcoalSoft: 'rgba(30,27,22,0.65)',
   brass: '#B07D3A',
   brassLight: 'rgba(176,125,58,0.15)',
-  sageBg: 'rgba(58,82,48,0.2)',
-  border: 'rgba(255,245,230,0.08)',
-  haze: '#7A6E60',
+  sageBg: '#EEF2EB',
+  border: 'rgba(30,27,22,0.09)',
+  haze: '#9C968A',
 };
 
 const BASE = import.meta.env.BASE_URL;
@@ -31,7 +31,7 @@ export default function ProductsPage() {
         *, *::before, *::after { box-sizing: border-box; }
         body { margin: 0; }
 
-        .pg-nav { position: sticky; top: 0; z-index: 100; background: rgba(28,24,20,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
+        .pg-nav { position: sticky; top: 0; z-index: 100; background: rgba(251,249,244,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid ${P.border}; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
         .pg-nav::after { content: ''; position: absolute; bottom: 0; left: 0; height: 1px; width: 0; background: ${P.brass}; animation: pg-nav-border 0.8s ease 0.2s forwards; }
         .pg-nav-brand { display: flex; align-items: center; gap: 8px; }
         .pg-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; flex-shrink: 0; }
@@ -44,8 +44,8 @@ export default function ProductsPage() {
         .pg-cart-icon { padding: 7px; color: ${P.charcoal}; display: flex; align-items: center; border-radius: 10px; transition: background 0.15s; text-decoration: none; }
         .pg-cart-icon:hover { background: ${P.sageBg}; }
 
-        .pg-hero { background: #252018; padding: 80px 24px 72px; text-align: center; }
-        .pg-hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,230,211,0.35); margin-bottom: 18px; }
+        .pg-hero { background: ${P.charcoal}; padding: 80px 24px 72px; text-align: center; }
+        .pg-hero-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.38); margin-bottom: 18px; }
         .pg-hero-title { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 800; color: #FBF9F4; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.08; }
         @media (max-width: 600px) { .pg-hero-title { font-size: 34px; } }
         .pg-hero-sub { font-size: 17px; color: ${P.haze}; margin: 0; line-height: 1.65; max-width: 520px; margin: 0 auto; }
@@ -55,11 +55,11 @@ export default function ProductsPage() {
         @media (max-width: 860px) { .pg-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 480px) { .pg-grid { grid-template-columns: 1fr; } }
 
-        .pg-card { background: #252018; border: 1px solid ${P.border}; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
-        .pg-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-        .pg-card-img { width: 100%; aspect-ratio: 1 / 1; background: ${P.sageBg}; border: 2px dashed rgba(255,245,230,0.1); display: flex; align-items: center; justify-content: center; box-sizing: border-box; flex-shrink: 0; overflow: hidden; border-radius: 12px 12px 0 0; }
+        .pg-card { background: #fff; border: 1px solid ${P.border}; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+        .pg-card:hover { box-shadow: 0 8px 32px rgba(30,27,22,0.09); }
+        .pg-card-img { width: 100%; aspect-ratio: 1 / 1; background: ${P.sageBg}; border: 2px dashed #C8D4C2; display: flex; align-items: center; justify-content: center; box-sizing: border-box; flex-shrink: 0; overflow: hidden; border-radius: 12px 12px 0 0; }
         .pg-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .pg-card-img-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,230,211,0.35); }
+        .pg-card-img-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(58,82,48,0.35); }
         .pg-card-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
         .pg-card-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: ${P.charcoal}; margin: 0 0 8px; line-height: 1.25; }
         .pg-card-desc { font-size: 13.5px; line-height: 1.65; color: ${P.charcoalSoft}; margin: 0 0 16px; flex: 1; }

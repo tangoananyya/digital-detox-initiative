@@ -10,7 +10,7 @@ export default function Success() {
   return (
     <div style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-      backgroundColor: '#1C1814', fontFamily: "'Inter', system-ui, sans-serif", color: '#F0E6D3',
+      backgroundColor: '#FBF9F4', fontFamily: "'Inter', system-ui, sans-serif", color: '#1E1B16',
       padding: '48px 20px', boxSizing: 'border-box',
     }}>
       <style>{`
@@ -25,13 +25,13 @@ export default function Success() {
       <div style={{ textAlign: 'center', maxWidth: 480, width: '100%' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 40 }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B07D3A', display: 'inline-block' }} />
-          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(240,230,211,0.5)' }}>Digital Detox Initiative</span>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.55)' }}>Digital Detox Initiative</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 32 }}>
           <svg width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
-            <circle cx="36" cy="36" r="34" stroke="#B07D3A" strokeWidth="2" fill="#1C1814" />
-            <circle cx="36" cy="36" r="28" fill="rgba(176,125,58,0.15)" />
+            <circle cx="36" cy="36" r="34" stroke="#B07D3A" strokeWidth="2" fill="#FBF9F4" />
+            <circle cx="36" cy="36" r="28" fill="#F5ECD8" />
             <path d="M22 36 L31 45 L50 27" stroke="#B07D3A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
           </svg>
         </div>
@@ -40,13 +40,13 @@ export default function Success() {
           Your Detox Kit is confirmed.
         </h1>
 
-        <p style={{ fontSize: 16, lineHeight: 1.72, color: 'rgba(240,230,211,0.6)', margin: '0 0 10px' }}>
+        <p style={{ fontSize: 16, lineHeight: 1.72, color: 'rgba(30,27,22,0.65)', margin: '0 0 10px' }}>
           Check your email for an order confirmation and tracking details. Your kit ships within 3 business days.
         </p>
 
-        <div style={{ marginTop: 28, marginBottom: 36, padding: '14px 20px', background: '#252018', border: '1px solid rgba(255,245,230,0.08)', borderRadius: 12, display: 'inline-block' }}>
-          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(240,230,211,0.35)' }}>Order reference</span>
-          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 15, letterSpacing: '0.14em', color: '#F0E6D3', marginTop: 4 }}>DDI-{ref}</div>
+        <div style={{ marginTop: 28, marginBottom: 36, padding: '14px 20px', background: '#fff', border: '1px solid rgba(30,27,22,0.08)', borderRadius: 12, display: 'inline-block' }}>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.4)' }}>Order reference</span>
+          <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 15, letterSpacing: '0.14em', color: '#1E1B16', marginTop: 4 }}>DDI-{ref}</div>
         </div>
 
         <div>

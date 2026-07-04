@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const P = {
-  linen: '#1C1814',
-  charcoal: '#F0E6D3',
-  charcoalSoft: 'rgba(240,230,211,0.6)',
+  linen: '#FBF9F4',
+  charcoal: '#1E1B16',
+  charcoalSoft: 'rgba(30,27,22,0.65)',
   brass: '#B07D3A',
   brassLight: 'rgba(176,125,58,0.15)',
   sage: '#3A5230',
-  sageBg: 'rgba(58,82,48,0.2)',
-  border: 'rgba(255,245,230,0.08)',
-  haze: '#7A6E60',
+  sageBg: '#EEF2EB',
+  border: 'rgba(30,27,22,0.09)',
+  haze: '#9C968A',
 };
 
 const BASE = import.meta.env.BASE_URL;
@@ -130,7 +130,7 @@ export default function HomePage() {
         body { margin: 0; }
 
         .hp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; transition: background 0.4s ease, border-bottom-color 0.4s ease, backdrop-filter 0.4s ease; border-bottom: 1px solid transparent; }
-        .hp-nav--solid { background: rgba(28,24,20,0.96); backdrop-filter: blur(10px); border-bottom-color: ${P.border}; }
+        .hp-nav--solid { background: rgba(251,249,244,0.96); backdrop-filter: blur(10px); border-bottom-color: ${P.border}; }
         .hp-nav-brand { display: flex; align-items: center; gap: 8px; }
         .hp-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: ${P.brass}; flex-shrink: 0; }
         .hp-brand-text { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); transition: color 0.4s; }
@@ -157,7 +157,7 @@ export default function HomePage() {
         .hp-scroll-arrow { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 3; animation: hp-bounce 2.2s ease-in-out infinite; }
         @keyframes hp-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.55; } 50% { transform: translateX(-50%) translateY(9px); opacity: 0.3; } }
 
-        .hp-stats { background: #252018; padding: 100px 24px; }
+        .hp-stats { background: ${P.charcoal}; padding: 100px 24px; }
         .hp-stats-inner { max-width: 1800px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px; }
         .hp-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 84px; font-weight: 800; color: ${P.brass}; line-height: 1; margin-bottom: 18px; letter-spacing: -0.03em; }
         .hp-stat-headline { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin: 0 0 12px; line-height: 1.4; }
@@ -181,7 +181,7 @@ export default function HomePage() {
         .hp-btn-outline-sage:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
         .hp-quiz-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.33); margin-top: 22px; }
 
-        .hp-reviews { background: #252018; padding: 100px 24px; }
+        .hp-reviews { background: #fff; padding: 100px 24px; }
         .hp-reviews-inner { max-width: 1800px; margin: 0 auto; }
         .hp-reviews-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.charcoalSoft}; text-align: center; margin-bottom: 12px; }
         .hp-reviews-headline { font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: ${P.charcoal}; text-align: center; margin: 0 0 52px; }
@@ -201,7 +201,7 @@ export default function HomePage() {
         .hp-value-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: ${P.charcoal}; margin: 0 0 12px; }
         .hp-value-body { font-size: 14.5px; line-height: 1.72; color: ${P.charcoalSoft}; margin: 0; }
 
-        .hp-final-cta { background: #252018; padding: 120px 24px; text-align: center; }
+        .hp-final-cta { background: ${P.charcoal}; padding: 120px 24px; text-align: center; }
         .hp-final-headline { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -0.02em; margin: 0 auto 40px; max-width: 700px; }
         .hp-final-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-top: 24px; }
 
