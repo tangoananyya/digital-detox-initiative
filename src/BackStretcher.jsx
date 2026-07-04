@@ -435,7 +435,7 @@ export default function BackStretcher() {
         .pp-review-text { font-size: 14px; line-height: 1.72; color: ${P.charcoalSoft}; margin: 0 0 16px; font-style: italic; }
         .pp-review-name { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: ${P.charcoal}; }
 
-        .pp-cta-section { background: ${P.charcoal}; padding: 80px 24px; text-align: center; }
+        .pp-cta-section { background: ${P.charcoal}; padding: 56px 24px; text-align: center; }
         .pp-cta-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.45); margin-bottom: 14px; }
         .pp-cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: #F2EDE4; margin: 0 0 14px; }
         @media (max-width: 480px) { .pp-cta-title { font-size: 26px; } }
