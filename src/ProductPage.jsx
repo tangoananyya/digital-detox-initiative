@@ -155,44 +155,44 @@ function goToCheckout() {
 
 const REVIEWS = [
   {
-    name: 'Priya M.',
+    name: 'Fatima N.',
     rating: 5,
-    text: 'Three weeks in and my neck finally stopped waking me up at night. I travel a lot for work so I was worried it would not fit in my carry-on but it does. Worth every penny.',
-  },
-  {
-    name: 'Derek T.',
-    rating: 4,
-    text: 'My wife got this first and I kept making fun of her for it. Now I use it more than she does. Do not tell her.',
-  },
-  {
-    name: 'Aaliyah R.',
-    rating: 5,
-    text: 'i do hair all day so my neck and shoulders are always wrecked by closing time. started using this before bed and honestly its the only thing that has actually made a difference. my clients have noticed i am less grumpy too lol',
+    text: 'i cannot believe i waited this long. my neck has been destroyed from working from home for 3 years and nothing worked. not the chiropractor, not the heating pad, not the massage gun. this fixed it in two weeks i am not even joking',
   },
   {
     name: 'James O.',
     rating: 5,
-    text: 'Retired teacher here. Decades of looking down at papers and desks caught up with me bad. My daughter ordered this for me and I use it every single morning now. Wish I had it 20 years ago.',
+    text: 'Retired teacher here. Decades of looking down at papers and desks caught up with me badly. My daughter ordered this and I use it every single morning now. Wish I had it twenty years ago.',
   },
   {
-    name: 'Sofia K.',
+    name: 'Aaliyah R.',
     rating: 4,
-    text: 'ok so i am a massage therapist and i was NOT expecting to be this impressed?? the curve is actually anatomically correct and the pressure points hit the right spots. been recommending it to clients now',
+    text: 'ok so i do hair all day and my neck is ALWAYS wrecked by closing time. started using this before bed and honestly?? game changer. only reason its not 5 stars is i wish it came in more colors lol',
   },
   {
-    name: 'Marcus W.',
+    name: 'Derek T.',
     rating: 5,
-    text: 'got this for my gaming setup. play for hours and the neck stiffness was getting bad. been using it a month and my headaches are basically gone?? idk what it does but it works',
+    text: 'My wife got this first and I kept making fun of her for it. Now I use it more than she does. Do not tell her.',
+  },
+  {
+    name: 'Margaret C.',
+    rating: 5,
+    text: 'I am 67 years old and have had neck pain for the better part of twenty years. My physiotherapist recommended cervical traction and this is exactly what she described. The relief is immediate and genuine. I recommended it to my entire book club.',
+  },
+  {
+    name: 'kevin l.',
+    rating: 4,
+    text: 'solid product. does what it says. the ivory colour looks exactly like the photos. took a few days to get used to the angle but now i use it every night before bed. would buy again',
   },
   {
     name: 'Nadia F.',
     rating: 5,
-    text: 'Bought this on a whim during a flare-up and cried the first time I used it. I have a bulging disc and this gave me more relief in 10 minutes than I got from a cortisone shot. Obviously not medical advice but wow.',
+    text: 'Bought this on a whim during a really bad flare up and cried the first time I used it. I have a bulging disc and this gave me more relief in ten minutes than I got from a cortisone shot. Obviously not medical advice but wow.',
   },
   {
-    name: 'Tom B.',
-    rating: 4,
-    text: 'does what it says. bought the midnight colour looks exactly like the photos. took a few days to get used to the stretch but now i actually look forward to using it. solid',
+    name: 'Priya S.',
+    rating: 5,
+    text: 'ok I have had this for maybe three weeks and Honestly? life changing. i was so skeptical because i have tried Everything for my neck pain but This actually works. use it every morning Before i open my laptop and i can already feel The difference. my posture is better, i am less grumpy, my bf noticed before i did lol',
   },
 ];
 
