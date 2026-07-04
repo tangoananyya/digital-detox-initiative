@@ -16,11 +16,11 @@ const P = {
 const BASE = import.meta.env.BASE_URL;
 
 const HERO_IMAGES = [
-  `${BASE}images/hero.png`,
-  `${BASE}images/back4.png`,
-  `${BASE}images/ballm2.png`,
-  `${BASE}images/robomassage5.png`,
-  `${BASE}images/posture2.png`,
+  `${BASE}images/home1.png`,
+  `${BASE}images/home2.png`,
+  `${BASE}images/home3.png`,
+  `${BASE}images/home4.png`,
+  `${BASE}images/home5.png`,
 ];
 
 const PRODUCT_GRID = [
