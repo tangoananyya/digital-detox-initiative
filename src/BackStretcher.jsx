@@ -437,7 +437,7 @@ export default function BackStretcher() {
 
         .pp-cta-section { background: ${P.charcoal}; padding: 80px 24px; text-align: center; }
         .pp-cta-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,249,244,0.45); margin-bottom: 14px; }
-        .pp-cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: ${P.charcoal}; margin: 0 0 14px; }
+        .pp-cta-title { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: #F2EDE4; margin: 0 0 14px; }
         @media (max-width: 480px) { .pp-cta-title { font-size: 26px; } }
         .pp-cta-sub { font-size: 16px; color: rgba(251,249,244,0.6); margin: 0 0 36px; line-height: 1.65; }
         .pp-cta-btn { display: inline-block; padding: 17px 36px; background: ${P.brass}; color: #fff; border: none; border-radius: 14px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.18s; }
