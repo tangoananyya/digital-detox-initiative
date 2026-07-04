@@ -183,8 +183,14 @@ function goToCheckout() {
 
 export default function App() {
   const navigate = useNavigate();
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const [step, setStep] = useState(() => {
+    const s = sessionStorage.getItem('ddi_quiz_step');
+    return s ? parseInt(s, 10) : 0;
+  });
+  const [answers, setAnswers] = useState(() => {
+    const a = sessionStorage.getItem('ddi_quiz_answers');
+    return a ? JSON.parse(a) : {};
+  });
   const [bgIndex, setBgIndex] = useState(0);
   const [bgLoaded, setBgLoaded] = useState([false, false, false, false, false]);
 
@@ -201,10 +207,22 @@ export default function App() {
     return () => clearInterval(t);
   }, []);
 
+  useEffect(() => {
+    sessionStorage.setItem('ddi_quiz_step', step);
+    sessionStorage.setItem('ddi_quiz_answers', JSON.stringify(answers));
+  }, [step, answers]);
+
   const handleAnswer = (key, value) => {
     const next = { ...answers, [key]: value };
     setAnswers(next);
     setStep(s => s + 1);
+  };
+
+  const resetQuiz = () => {
+    sessionStorage.removeItem('ddi_quiz_step');
+    sessionStorage.removeItem('ddi_quiz_answers');
+    setStep(0);
+    setAnswers({});
   };
 
   const isDone = step >= QUESTIONS.length;
@@ -221,9 +239,12 @@ export default function App() {
         <style>{GLOBAL_STYLES}</style>
         <div style={{ maxWidth: 680, margin: '0 auto', padding: '48px 24px 96px' }}>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 44 }}>
-            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B07D3A', display: 'inline-block' }} />
-            <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.55)' }}>Digital Detox Initiative</span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 44 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#B07D3A', display: 'inline-block' }} />
+              <span style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.55)' }}>Digital Detox Initiative</span>
+            </div>
+            <button onClick={resetQuiz} style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(30,27,22,0.4)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>Retake quiz</button>
           </div>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', padding: '6px 14px', background: '#EEF2EB', border: '1px solid rgba(58,82,48,0.25)', borderRadius: 8, marginBottom: 18 }}>
