@@ -163,15 +163,7 @@ export default function HomePage() {
         .hp-stat-headline { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin: 0 0 12px; line-height: 1.4; }
         .hp-stat-body { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.48); margin: 0; }
 
-        .hp-solution { padding: 100px 24px; background: ${P.linen}; }
-        .hp-solution-inner { max-width: 1800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .hp-solution-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.brass}; margin-bottom: 16px; }
-        .hp-solution-headline { font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 800; color: ${P.charcoal}; line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 20px; }
-        .hp-solution-body { font-size: 16px; line-height: 1.78; color: ${P.charcoalSoft}; margin: 0 0 32px; }
-        .hp-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-        .hp-product-img-link { aspect-ratio: 1 / 1; border-radius: 16px; overflow: hidden; display: block; }
-        .hp-product-img-link img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
-        .hp-product-img-link:hover img { transform: scale(1.05); }
+
 
         .hp-quiz-cta { background: ${P.sage}; padding: 100px 24px; text-align: center; }
         .hp-quiz-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
@@ -208,7 +200,6 @@ export default function HomePage() {
         @media (max-width: 900px) {
           .hp-stats-inner { grid-template-columns: 1fr; gap: 48px; }
           .hp-stat-num { font-size: 64px; }
-          .hp-solution-inner { grid-template-columns: 1fr; gap: 48px; }
           .hp-reviews-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 720px) {
@@ -216,7 +207,6 @@ export default function HomePage() {
           .hp-hero-sub { font-size: 16px; }
           .hp-quiz-headline { font-size: 36px; }
           .hp-final-headline { font-size: 30px; }
-          .hp-solution-headline { font-size: 30px; }
         }
         @media (max-width: 560px) {
           .hp-nav { padding: 16px 20px; }
@@ -296,27 +286,6 @@ export default function HomePage() {
               <p className="hp-stat-body">{s.body}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── SECTION 3: THE SOLUTION ──────────────────────────────── */}
-      <section className="hp-solution">
-        <div className="hp-solution-inner">
-          <div className="hp-reveal">
-            <div className="hp-solution-label">The Collection</div>
-            <h2 className="hp-solution-headline">We did not build supplements. We built tools.</h2>
-            <p className="hp-solution-body">
-              Every product in the Digital Detox Initiative collection is a physical intervention — something you use with your body, not something you swallow or spray. No subscriptions. No wellness theatre. Just mechanics that work.
-            </p>
-            <Link to="/products" className="hp-btn-brass">See How They Work</Link>
-          </div>
-          <div className="hp-product-grid hp-reveal hp-reveal--d1">
-            {PRODUCT_GRID.map((p, i) => (
-              <Link key={i} to={p.href} className="hp-product-img-link">
-                <img src={p.src} alt="" />
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
