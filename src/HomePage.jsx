@@ -193,13 +193,7 @@ export default function HomePage() {
         .hp-review-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: ${P.charcoal}; }
         .hp-review-product { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: ${P.brass}; background: ${P.brassLight}; padding: 3px 8px; border-radius: 5px; }
 
-        .hp-values { background: ${P.linen}; padding: 100px 24px; border-top: 1px solid ${P.border}; }
-        .hp-values-inner { max-width: 1800px; margin: 0 auto; }
-        .hp-values-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: ${P.charcoalSoft}; text-align: center; margin-bottom: 56px; }
-        .hp-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .hp-value-item { border-top: 1.5px solid ${P.brass}; padding-top: 24px; }
-        .hp-value-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: ${P.charcoal}; margin: 0 0 12px; }
-        .hp-value-body { font-size: 14.5px; line-height: 1.72; color: ${P.charcoalSoft}; margin: 0; }
+
 
         .hp-final-cta { background: ${P.charcoal}; padding: 120px 24px; text-align: center; }
         .hp-final-headline { font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -0.02em; margin: 0 auto 40px; max-width: 700px; }
@@ -216,7 +210,6 @@ export default function HomePage() {
           .hp-stat-num { font-size: 64px; }
           .hp-solution-inner { grid-template-columns: 1fr; gap: 48px; }
           .hp-reviews-grid { grid-template-columns: 1fr; }
-          .hp-values-grid { grid-template-columns: 1fr; gap: 32px; }
         }
         @media (max-width: 720px) {
           .hp-hero-headline { font-size: 44px; }
@@ -360,25 +353,6 @@ export default function HomePage() {
                   <span className="hp-review-name">{r.name}</span>
                   <span className="hp-review-product">{r.product}</span>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 6: BRAND VALUES ──────────────────────────────── */}
-      <section className="hp-values">
-        <div className="hp-values-inner">
-          <div className="hp-values-label hp-reveal">Why we built this</div>
-          <div className="hp-values-grid">
-            {[
-              { name: 'No Subscriptions', body: 'You buy it once. You own it. No monthly fees, no refills, no ecosystem to buy into.' },
-              { name: 'Ships in 3 Days',  body: 'Every order ships within 72 hours. Free on orders over $49.' },
-              { name: '30-Day Guarantee', body: 'If it does not work for your body, send it back. No questions.' },
-            ].map((v, i) => (
-              <div key={i} className={`hp-value-item hp-reveal${i === 1 ? ' hp-reveal--d1' : i === 2 ? ' hp-reveal--d2' : ''}`}>
-                <div className="hp-value-name">{v.name}</div>
-                <p className="hp-value-body">{v.body}</p>
               </div>
             ))}
           </div>
