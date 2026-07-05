@@ -88,6 +88,7 @@ export default function ProductsPage() {
         <div className="pg-nav-right">
           <Link to="/home" className="pg-nav-link">Home</Link>
           <Link to="/products" className="pg-nav-link">All Products</Link>
+          <Link to="/contact" className="pg-nav-link">Contact</Link>
           <Link to="/quiz" className="pg-nav-quiz">
             Find Your Fix
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

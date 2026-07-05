@@ -13,6 +13,7 @@ import CompressionGloves from './CompressionGloves.jsx';
 import ProductsPage from './ProductsPage.jsx';
 import App from './App.jsx';
 import Success from './Success.jsx';
+import ContactPage from './ContactPage.jsx';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,6 +67,7 @@ function AnimatedRoutes() {
         <Route path="/home"          element={<HomePage />} />
         <Route path="/quiz"          element={<App />} />
         <Route path="/success"       element={<Success />} />
+        <Route path="/contact"       element={<ContactPage />} />
       </Routes>
     </div>
   );

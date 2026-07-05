@@ -234,6 +234,7 @@ export default function HomePage() {
         </Link>
         <div className="hp-nav-right">
           <Link to="/products" className="hp-nav-link">All Products</Link>
+          <Link to="/contact" className="hp-nav-link">Contact</Link>
           <Link to="/quiz" className="hp-nav-quiz">
             Find Your Fix
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
