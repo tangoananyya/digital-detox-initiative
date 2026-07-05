@@ -13,8 +13,8 @@ const P = {
   haze: '#9C968A',
 };
 
-// Replace FORMSPREE_ID with your actual form ID from formspree.io
-const FORMSPREE_ID = 'REPLACE_WITH_YOUR_FORM_ID';
+// Paste your Web3Forms access key here (get it free at web3forms.com — enter your email, they send the key instantly)
+const WEB3FORMS_KEY = 'REPLACE_WITH_YOUR_ACCESS_KEY';
 
 export default function ContactPage() {
   const [fields, setFields] = useState({ name: '', email: '', subject: '', message: '' });
@@ -26,12 +26,13 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(fields),
+        body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...fields }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setStatus('success');
         setFields({ name: '', email: '', subject: '', message: '' });
       } else {
