@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import Footer from './Footer.jsx';
 
 const P = {
   linen: '#F2EDE4',
@@ -143,7 +145,8 @@ function Popup({ onDismiss }) {
           No thanks
         </button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -684,6 +687,7 @@ export default function ProductPage() {
         <div className="pp-nav-right">
           <Link to="/home" className="pp-nav-link">Home</Link>
           <Link to="/products" className="pp-nav-link">All Products</Link>
+          <Link to="/contact" className="pp-nav-link">Contact</Link>
           <Link to="/quiz" className="pp-nav-quiz">
             Find Your Fix
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -890,6 +894,8 @@ export default function ProductPage() {
       />
 
       {showPopup && <Popup onDismiss={handleDismiss} />}
+
+      <Footer />
 
       {zoom.active && zoom.rect && (
         <div

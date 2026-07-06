@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
+import Footer from './Footer.jsx';
 
 const P = {
   linen: '#F2EDE4',
@@ -80,7 +82,7 @@ function Popup({ onDismiss }) {
     setVisible(false);
     setTimeout(onDismiss, 380);
   };
-  return (
+  return createPortal(
     <div onClick={handleDismiss} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(30,27,22,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease' }}>
       <div onClick={e => e.stopPropagation()} style={{ background: '#FAF7F2', borderRadius: 20, padding: '32px 28px 28px', maxWidth: 440, width: 'calc(100% - 40px)', boxShadow: '0 16px 60px rgba(30,27,22,0.22)', border: `1px solid ${P.border}`, transform: `translateY(${visible ? '0' : '24px'}) scale(${visible ? 1 : 0.97})`, transition: 'transform 0.38s cubic-bezier(.32,.72,0,1)' }}>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}>
@@ -101,7 +103,8 @@ function Popup({ onDismiss }) {
           No thanks
         </button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -516,6 +519,7 @@ export default function BackStretcher() {
         <div className="pp-nav-right">
           <Link to="/home" className="pp-nav-link">Home</Link>
           <Link to="/products" className="pp-nav-link">All Products</Link>
+          <Link to="/contact" className="pp-nav-link">Contact</Link>
           <Link to="/quiz" className="pp-nav-quiz">
             Find Your Fix
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -686,6 +690,7 @@ export default function BackStretcher() {
       {zoom.active && zoom.rect && (
         <div aria-hidden="true" style={{ position: 'fixed', left: zoom.clientX - LENS_R, top: zoom.clientY - LENS_R, width: LENS_R * 2, height: LENS_R * 2, borderRadius: '50%', border: '2px solid #B07D3A', boxShadow: '0 4px 20px rgba(30,27,22,0.22)', backgroundImage: `url(${heroImg})`, backgroundSize: `${zoom.rect.width * ZOOM_FACTOR}px ${zoom.rect.height * ZOOM_FACTOR}px`, backgroundPosition: `${-(zoom.x * zoom.rect.width * ZOOM_FACTOR) + LENS_R}px ${-(zoom.y * zoom.rect.height * ZOOM_FACTOR) + LENS_R}px`, zIndex: 300, pointerEvents: 'none', overflow: 'hidden' }} />
       )}
+      <Footer />
     </div>
   );
 }

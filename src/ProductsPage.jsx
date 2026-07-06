@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from './Footer.jsx';
 
 const P = {
   linen: '#F2EDE4',
@@ -137,6 +138,7 @@ export default function ProductsPage() {
         <h2 className="pg-cta-title">Not sure where to start? Take our free 60-second assessment.</h2>
         <Link to="/quiz" className="pg-cta-quiz-btn">Find Your Fix</Link>
       </section>
+      <Footer />
     </div>
   );
 }

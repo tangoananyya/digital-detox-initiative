@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from './Footer.jsx';
 
 const P = {
   linen: '#F2EDE4',
@@ -341,6 +342,7 @@ export default function HomePage() {
           <p className="hp-final-note">Free shipping over $49 · 30-day guarantee · Ships in 3 days</p>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
