@@ -85,7 +85,7 @@ function Popup({ onDismiss }) {
     setTimeout(onDismiss, 380);
   };
 
-  return (
+  return createPortal(
     <div
       onClick={handleDismiss}
       style={{
