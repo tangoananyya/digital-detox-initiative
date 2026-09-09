@@ -1,9 +1,0 @@
-{
-  "name": "tfssdeca-site",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Turner Fenton DECA chapter website: static site + Vercel serverless function for AI roleplay practice.",
-  "engines": {
-    "node": ">=18"
-  }
-}
